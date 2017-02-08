@@ -6,6 +6,8 @@
 #include "dcomplex.h"
 #include <cstdlib>
 #include <complex>
+ 
+#define op operazione
 
 TEST(DComplex, Zero)
 {
@@ -37,14 +39,82 @@ TEST(DComplex, GenericSum)
     ASSERT_EQ(a+a1, y.getRealP());
 	ASSERT_EQ(b+b1, y.getImmP());
 }
-TEST(DComplex, Exponential)
+TEST(DComplex, exp)
 {
+#undef op
+#define op exp
 	double a= (double)rand() / RAND_MAX;
 	double b= (double)rand() / RAND_MAX;
 	dcomplex x=dcomplex(a,b);
 	std::complex<double> x1=std::complex<double>(a,b);
-	x=exp(x);
-	x1=exp(x1);
+	x=op (x);
+	x1=op (x1);
+    ASSERT_EQ(x1.real(), x.getRealP());
+	ASSERT_EQ(x1.imag(), x.getImmP());
+}
+TEST(DComplex, log)
+{
+#undef op
+#define op log
+	double a= (double)rand() / RAND_MAX;
+	double b= (double)rand() / RAND_MAX;
+	dcomplex x=dcomplex(a,b);
+	std::complex<double> x1=std::complex<double>(a,b);
+	x=op (x);
+	x1=op (x1);
+    ASSERT_EQ(x1.real(), x.getRealP());
+	ASSERT_EQ(x1.imag(), x.getImmP());
+}
+TEST(DComplex, sin)
+{
+#undef op
+#define op sin
+	double a= (double)rand() / RAND_MAX;
+	double b= (double)rand() / RAND_MAX;
+	dcomplex x=dcomplex(a,b);
+	std::complex<double> x1=std::complex<double>(a,b);
+	x=op (x);
+	x1=op (x1);
+    ASSERT_EQ(x1.real(), x.getRealP());
+	ASSERT_EQ(x1.imag(), x.getImmP());
+}
+TEST(DComplex, cos)
+{
+#undef op
+#define op cos
+	double a= (double)rand() / RAND_MAX;
+	double b= (double)rand() / RAND_MAX;
+	dcomplex x=dcomplex(a,b);
+	std::complex<double> x1=std::complex<double>(a,b);
+	x=op (x);
+	x1=op (x1);
+    ASSERT_EQ(x1.real(), x.getRealP());
+	ASSERT_EQ(x1.imag(), x.getImmP());
+}
+TEST(DComplex, tan)
+{
+#undef op
+#define op tan
+	double a= (double)rand() / RAND_MAX;
+	double b= (double)rand() / RAND_MAX;
+	dcomplex x=dcomplex(a,b);
+	std::complex<double> x1=std::complex<double>(a,b);
+	x=op (x);
+	x1=op (x1);
+    ASSERT_EQ(x1.real(), x.getRealP());
+	ASSERT_EQ(x1.imag(), x.getImmP());
+}
+TEST(DComplex, pow)
+{
+#undef op
+#define op pow
+	double a= (double)rand() / RAND_MAX;
+	double b= (double)rand() / RAND_MAX;
+	double n= (double)rand() / RAND_MAX;
+	dcomplex x=dcomplex(a,b);
+	std::complex<double> x1=std::complex<double>(a,b);
+	x=op (x,n);
+	x1=op (x1,n);
     ASSERT_EQ(x1.real(), x.getRealP());
 	ASSERT_EQ(x1.imag(), x.getImmP());
 }
