@@ -6,5 +6,5 @@ sudo: required
 install:
 - sudo apt-get -y install cmake
 - chmod +x googleTester.sh
-- export CXX="g++-6"
+- export CXX="g++"
 script: "bash -c ./googleTester.sh"
