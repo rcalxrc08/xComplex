@@ -1,5 +1,5 @@
 language: cpp
-compiler: g++-6
+compiler: g++
 notifications:
   email: false
 sudo: required
@@ -16,4 +16,5 @@ install:
 - sudo apt-get -y install gcc-6
 - sudo apt-get -y install cmake
 - chmod +x googleTester.sh
+- export CXX="g++-6"
 script: "bash -c ./googleTester.sh"

@@ -34,7 +34,7 @@ include_directories("${gtest_SOURCE_DIR}/include")
 
 # Where Google Test's libraries can be found.
 #link_directories("./googletest-build/googlemock/gtest/libgtest.a")
-set (CMAKE_CXX_FLAGS "-std=c++11")
+set (CMAKE_CXX_FLAGS "-std=c++0x")
 file(GLOB SOURCES "source/*.cpp")
 file(GLOB TEST_SOURCES "test/*.cpp")
 
