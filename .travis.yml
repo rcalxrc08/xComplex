@@ -3,17 +3,7 @@ compiler: g++
 notifications:
   email: false
 sudo: required
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-6
-      - g++-6
 install:
-- sudo apt-get -y update
-- sudo apt-get -y install g++-6
-- sudo apt-get -y install gcc-6
 - sudo apt-get -y install cmake
 - chmod +x googleTester.sh
 - export CXX="g++-6"
