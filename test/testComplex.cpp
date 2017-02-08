@@ -19,7 +19,7 @@ TEST(DComplex, One)
 	dcomplex x=dcomplex(1.0);
     ASSERT_EQ(1.0, x.getRealP());
 }
-TEST(DComplex, GenericRandom)
+TEST(DComplex, Assignment)
 {
 	double a= (double)rand() / RAND_MAX;
 	double b= (double)rand() / RAND_MAX;
@@ -27,7 +27,7 @@ TEST(DComplex, GenericRandom)
     ASSERT_EQ(a, x.getRealP());
 	ASSERT_EQ(b, x.getImmP());
 }
-TEST(DComplex, GenericSum)
+TEST(DComplex, Sum)
 {
 	double a= (double)rand() / RAND_MAX;
 	double b= (double)rand() / RAND_MAX;
