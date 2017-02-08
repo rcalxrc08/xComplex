@@ -1,8 +1,6 @@
 //
 // Created by nico on 1/23/17.
 //
-
-#include <adept/Stack.h>
 #include <adept.h>
 #include "TestXComplex.h"
 #include "acomplex.h"

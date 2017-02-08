@@ -229,22 +229,22 @@ public:
     friend acomplex pow(const acomplex& in,const adept::adouble& n)
     {
         /*adept::adouble Rho=in.getRho();
-        Rho=adept::pow(Rho,n);
+        Rho=pow(Rho,n);
         adept::adouble Theta=n*in.getTheta();
         acomplex outCpx=acomplex(cos(Theta)*Rho,sin(Theta)*Rho);*/
 
-        return acomplex(cos(n*in.getTheta())*adept::pow(in.getRho(),n),sin(n*in.getTheta())*adept::pow(in.getRho(),n));
+        return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
     }
 
     friend acomplex pow(const acomplex& in,double n)
     {
-//        adept::adouble Rho=adept::pow(in.getRho(),n);
-//        Rho=adept::pow(Rho,n);
-//        Rho=adept::pow(Rho,n);
+//        adept::adouble Rho=pow(in.getRho(),n);
+//        Rho=pow(Rho,n);
+//        Rho=pow(Rho,n);
 //        adept::adouble Theta=n*in.getTheta();
-//        acomplex outCpx=acomplex(cos(n*in.getTheta())*adept::pow(in.getRho(),n),sin(n*in.getTheta())*adept::pow(in.getRho(),n));
+//        acomplex outCpx=acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
 
-        return acomplex(cos(n*in.getTheta())*adept::pow(in.getRho(),n),sin(n*in.getTheta())*adept::pow(in.getRho(),n));
+        return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
     }
 
     friend acomplex exp(const acomplex& in)

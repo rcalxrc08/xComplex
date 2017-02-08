@@ -7,7 +7,7 @@
 
 #include <math.h>
 #include <stdexcept>
-#include "adept_source.h"
+#include "adept.h"
 
 double adtan2(double y, double x);
 adept::adouble adtan2(adept::adouble y, adept::adouble x);
