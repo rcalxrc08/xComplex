@@ -5,6 +5,7 @@
 #include "TestXComplex.h"
 #include "dcomplex.h"
 #include <cstdlib>
+#include <complex>
 
 TEST(DComplex, Zero)
 {
@@ -35,4 +36,15 @@ TEST(DComplex, GenericSum)
 	dcomplex y=x+x1;
     ASSERT_EQ(a+a1, y.getRealP());
 	ASSERT_EQ(b+b1, y.getImmP());
+}
+TEST(DComplex, Exponential)
+{
+	double a= (double)rand() / RAND_MAX;
+	double b= (double)rand() / RAND_MAX;
+	dcomplex x=dcomplex(a,b);
+	std::complex<double> x1=std::complex<double>(a,b);
+	x=exp(x);
+	x1=exp(x1);
+    ASSERT_EQ(x1.real(), x.getRealP());
+	ASSERT_EQ(x1.imag(), x.getImmP());
 }
