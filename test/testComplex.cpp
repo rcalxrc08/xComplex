@@ -51,6 +51,11 @@ TEST(DComplex, exp)
 	x1=op (x1);
     ASSERT_EQ(x1.real(), x.getRealP());
 	ASSERT_EQ(x1.imag(), x.getImmP());
+	if (HasFatalFailure())
+	{
+		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+	}
 }
 TEST(DComplex, log)
 {
@@ -64,6 +69,11 @@ TEST(DComplex, log)
 	x1=op (x1);
     ASSERT_EQ(x1.real(), x.getRealP());
 	ASSERT_EQ(x1.imag(), x.getImmP());
+	if (HasFatalFailure())
+	{
+		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+	}
 }
 TEST(DComplex, sin)
 {
@@ -77,6 +87,11 @@ TEST(DComplex, sin)
 	x1=op (x1);
     ASSERT_EQ(x1.real(), x.getRealP());
 	ASSERT_EQ(x1.imag(), x.getImmP());
+	if (HasFatalFailure())
+	{
+		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+	}
 }
 TEST(DComplex, cos)
 {
@@ -90,6 +105,11 @@ TEST(DComplex, cos)
 	x1=op (x1);
     ASSERT_EQ(x1.real(), x.getRealP());
 	ASSERT_EQ(x1.imag(), x.getImmP());
+	if (HasFatalFailure())
+	{
+		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+	}
 }
 TEST(DComplex, tan)
 {
@@ -103,6 +123,11 @@ TEST(DComplex, tan)
 	x1=op (x1);
     ASSERT_EQ(x1.real(), x.getRealP());
 	ASSERT_EQ(x1.imag(), x.getImmP());
+	if (HasFatalFailure())
+	{
+		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+	}
 }
 TEST(DComplex, pow)
 {
@@ -117,4 +142,9 @@ TEST(DComplex, pow)
 	x1=op (x1,n);
     ASSERT_EQ(x1.real(), x.getRealP());
 	ASSERT_EQ(x1.imag(), x.getImmP());
+	if (HasFatalFailure())
+	{
+		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+	}
 }
