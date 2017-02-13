@@ -4,6 +4,7 @@
 #include "functions.hpp"
 #include "TestXComplex.h"
 #include "dcomplex.h"
+#include "acomplex.h"
 #include <cstdlib>
 #include <complex>
  
