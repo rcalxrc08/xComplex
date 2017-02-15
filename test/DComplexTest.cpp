@@ -9,6 +9,7 @@
 #include <complex>
  
 #define op operazione
+#define Nprint 20
 
 TEST(DComplex, Zero)
 {
@@ -58,8 +59,8 @@ TEST(DComplex, exp)
 	EXPECT_EQ(x1.imag(), x.getImmP());
 	if (HasFailure())
 	{
-		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
-		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(Nprint)<<x<<std::endl;
 	}
 }
 TEST(DComplex, log)
@@ -76,8 +77,8 @@ TEST(DComplex, log)
 	EXPECT_EQ(x1.imag(), x.getImmP());
 	if (HasFailure())
 	{
-		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
-		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(Nprint)<<x<<std::endl;
 	}
 }
 TEST(DComplex, sin)
@@ -94,8 +95,8 @@ TEST(DComplex, sin)
 	EXPECT_EQ(x1.imag(), x.getImmP());
 	if (HasFailure())
 	{
-		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
-		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(Nprint)<<x<<std::endl;
 	}
 }
 TEST(DComplex, cos)
@@ -112,8 +113,8 @@ TEST(DComplex, cos)
 	EXPECT_EQ(x1.imag(), x.getImmP());
 	if (HasFailure())
 	{
-		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
-		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(Nprint)<<x<<std::endl;
 	}
 }
 TEST(DComplex, tan)
@@ -130,8 +131,8 @@ TEST(DComplex, tan)
 	EXPECT_EQ(x1.imag(), x.getImmP());
 	if (HasFailure())
 	{
-		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
-		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(Nprint)<<x<<std::endl;
 	}
 }
 TEST(DComplex, pow)
@@ -149,7 +150,7 @@ TEST(DComplex, pow)
 	EXPECT_EQ(x1.imag(), x.getImmP());
 	if (HasFailure())
 	{
-		std::cout<<"Complex: "<<std::setprecision(16)<<x1<<std::endl;
-		std::cout<<"DComplex: "<<std::setprecision(16)<<x<<std::endl;
+		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
+		std::cout<<"DComplex: "<<std::setprecision(Nprint)<<x<<std::endl;
 	}
 }

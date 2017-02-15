@@ -284,7 +284,8 @@ public:
         auto tmp2=cos(in);
         acomplex outCpx=tmp1/tmp2;*/
 
-        return sin(in)/cos(in);
+        //return sin(in)/cos(in);
+		return acomplex(  sin( 2.*in.getRealP() ),  sinh( 2.*in.getImmP())  )/  (  cos(2.*in.getRealP())+cosh(2*in.getImmP()));
     }
 
     friend acomplex log(const acomplex& in)
