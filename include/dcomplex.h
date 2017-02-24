@@ -114,7 +114,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, dcomplex& obj)
     {
-        double tmp1=-1.0*obj.getImmP();
+        double tmp1=adept::value(-1.0*obj.getImmP());
         if(obj.getImmP()>=0.0)
             os<<obj.getRealP()<<" + "<<ImagUnit<<" "<<obj.getImmP()<<std::endl;
         else
@@ -271,6 +271,11 @@ public:
     dcomplex immUnit()
     {
         return (dcomplex(0.0,1.0));
+    }
+    friend void swap(dcomplex& a, dcomplex& b)
+    {
+        std::swap(a.realP, b.realP);
+        std::swap(a.immP, b.immP);
     }
 };
 

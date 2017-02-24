@@ -50,7 +50,7 @@ public:
     }
 
 ////Mathematical Operators
-    acomplex operator+(const adept::adouble& cpx) //Adouble SUM
+    inline acomplex operator+(const adept::adouble& cpx) //Adouble SUM
     const{
         /*adept::adouble r=(*this).getRealP()+cpx;
         adept::adouble i=(*this).getImmP();*/
@@ -58,7 +58,7 @@ public:
 
         return acomplex((*this).getRealP()+cpx,(*this).getImmP());
     }
-    acomplex operator+(const double& cpx) //Double SUM
+    inline acomplex operator+(const double& cpx) //Double SUM
     const{
        /* adept::adouble r=(*this).getRealP()+cpx;
         adept::adouble i=(*this).getImmP();
@@ -66,7 +66,7 @@ public:
 
         return acomplex((*this).getRealP()+cpx,(*this).getImmP());
     }
-    acomplex operator+(const acomplex& cpx) //Acomplex SUM
+    inline acomplex operator+(const acomplex& cpx) //Acomplex SUM
     const{
        /* adept::adouble r = (*this).getRealP() + cpx.getRealP();
         adept::adouble i = (*this).getImmP() + cpx.getImmP();
@@ -76,7 +76,7 @@ public:
     }
 
 
-    acomplex operator/(const double& cpx)
+    inline acomplex operator/(const double& cpx)
     const{
       /*  adept::adouble r=(*this).getRealP();
         adept::adouble i=(*this).getImmP();
@@ -84,7 +84,7 @@ public:
 */
         return acomplex((*this).getRealP()/cpx,(*this).getImmP()/cpx);
     }
-    acomplex operator*(const adept::adouble& cpx)
+    inline acomplex operator*(const adept::adouble& cpx)
     const{
         /*adept::adouble r=(*this).getRealP();
         adept::adouble i=(*this).getImmP();
@@ -92,7 +92,7 @@ public:
 
         return acomplex((*this).getRealP()*cpx,(*this).getImmP()*cpx);
     }
-    acomplex operator/(const adept::adouble& cpx)
+    inline acomplex operator/(const adept::adouble& cpx)
     const{
         /*adept::adouble r=(*this).getRealP();
         adept::adouble i=(*this).getImmP();
@@ -125,19 +125,19 @@ public:
 
 
 
-    acomplex operator+=(const acomplex& cpx)
+    inline acomplex operator+=(const acomplex& cpx)
     {
         return (*this)+cpx;
     }
 
-    acomplex operator-(const acomplex& cpx)
+    inline acomplex operator-(const acomplex& cpx)
     {
 
 //        acomplex outCpc=acomplex((*this).getRealP()-cpx.getRealP(),(*this).getImmP()-cpx.getImmP());
 
         return acomplex((*this).getRealP()-cpx.getRealP(),(*this).getImmP()-cpx.getImmP());;
     }
-    acomplex operator-(const adept::adouble& cpx)
+    inline acomplex operator-(const adept::adouble& cpx)
     {
 
 //        acomplex outCpc=acomplex((*this).getRealP()-cpx,(*this).getImmP());
@@ -145,7 +145,7 @@ public:
         return acomplex((*this).getRealP()-cpx,(*this).getImmP());
     }
 
-    acomplex operator-(const double& cpx)
+    inline acomplex operator-(const double& cpx)
     {
 
 //        acomplex outCpc=acomplex((*this).getRealP()-cpx,(*this).getImmP());
@@ -153,12 +153,12 @@ public:
         return acomplex((*this).getRealP()-cpx,(*this).getImmP());
     }
 
-    acomplex operator-=(const acomplex& cpx)
+    inline acomplex operator-=(const acomplex& cpx)
     {
         return (*this)-cpx;
     }
 
-    acomplex operator*(const double& cpx)
+    inline acomplex operator*(const double& cpx)
     {
         /*adept::adouble r=(*this).getRealP();
         adept::adouble i=(*this).getImmP();
@@ -167,7 +167,7 @@ public:
         return acomplex((*this).getRealP()*cpx,(*this).getImmP()*cpx);
     }
 
-    acomplex operator*(const acomplex& cpx)
+    inline acomplex operator*(const acomplex& cpx)
     const{
         /*adept::adouble r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
         adept::adouble i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
@@ -176,12 +176,12 @@ public:
         return acomplex((*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP(),(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP());
     }
 
-    acomplex operator*=(const acomplex& cpx)
+    inline acomplex operator*=(const acomplex& cpx)
     {
         return (*this)*cpx;
     }
 
-    acomplex operator/(const acomplex& cpx)
+    inline acomplex operator/(const acomplex& cpx)
     {
 //        adept::adouble r=((*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP());
 //        adept::adouble i=((*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP());
@@ -191,7 +191,7 @@ public:
         return acomplex(((*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP())/cpx.getNormSqr(),((*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP())/cpx.getNormSqr());
     }
 
-    acomplex operator/=(const acomplex& cpx)
+    inline acomplex operator/=(const acomplex& cpx)
     {
         return (*this)/cpx;
     }
@@ -229,7 +229,7 @@ public:
     friend acomplex pow(const acomplex& in,const adept::adouble& n)
     {
         /*adept::adouble Rho=in.getRho();
-        Rho=pow(Rho,n);
+        Rho=adept::pow(Rho,n);
         adept::adouble Theta=n*in.getTheta();
         acomplex outCpx=acomplex(cos(Theta)*Rho,sin(Theta)*Rho);*/
 
@@ -238,11 +238,11 @@ public:
 
     friend acomplex pow(const acomplex& in,double n)
     {
-//        adept::adouble Rho=pow(in.getRho(),n);
-//        Rho=pow(Rho,n);
-//        Rho=pow(Rho,n);
+//        adept::adouble Rho=adept::pow(in.getRho(),n);
+//        Rho=adept::pow(Rho,n);
+//        Rho=adept::pow(Rho,n);
 //        adept::adouble Theta=n*in.getTheta();
-//        acomplex outCpx=acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
+//        acomplex outCpx=acomplex(cos(n*in.getTheta())*adept::pow(in.getRho(),n),sin(n*in.getTheta())*adept::pow(in.getRho(),n));
 
         return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
     }
@@ -283,9 +283,8 @@ public:
       /*  auto tmp1=sin(in);
         auto tmp2=cos(in);
         acomplex outCpx=tmp1/tmp2;*/
-
-        //return sin(in)/cos(in);
-		return acomplex(  sin( 2.*in.getRealP() ),  sinh( 2.*in.getImmP())  )/  (  cos(2.*in.getRealP())+cosh(2*in.getImmP()));
+//        return acomplex(  sin( 2.*in.getRealP() ),  sinh( 2.*in.getImmP())  )/  (  cos(2.*in.getRealP())+cosh(2*in.getImmP()));
+        return acomplex(  sin( 2.*in.getRealP() ),  sinh( 2.*in.getImmP())  )/  (  cos(2.*in.getRealP())+cosh(2*in.getImmP()));
     }
 
     friend acomplex log(const acomplex& in)
@@ -296,11 +295,16 @@ public:
 
         return acomplex(log(in.getRho()),in.getTheta());
     }
+    friend void swap(acomplex& a, acomplex& b)
+    {
 
-    acomplex immUnit()
+        std::swap(a.realP, b.realP);
+        std::swap(a.immP, b.immP);
+    }
+    /*acomplex immUnit()
     {
         return (acomplex(0.0,1.0));
-    }
+    }*/
 };
 
 #endif //TESI_ACOMPLEX_H
