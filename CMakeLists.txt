@@ -1,44 +1,20 @@
-cmake_minimum_required(VERSION 2.8)
-project(GoogleTestHelloWorld)
+cmake_minimum_required(VERSION 3.3)
+project(AComplexClass)
 
-# Download and unpack googletest at configure time
-configure_file(CMakeLists.txt.in
-               googletest-download/CMakeLists.txt)
-execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
-  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
-execute_process(COMMAND ${CMAKE_COMMAND} --build .
-  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
- 
-# Prevent GoogleTest from overriding our compiler/linker options
-# when building with Visual Studio
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
- 
-# Add googletest directly to our build. This adds
-# the following targets: gtest, gtest_main, gmock
-# and gmock_main
-add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
-                 ${CMAKE_BINARY_DIR}/googletest-build)
- 
-# The gtest/gmock targets carry header search path
-# dependencies automatically when using CMake 2.8.11 or
-# later. Otherwise we have to add them here ourselves.
-if (CMAKE_VERSION VERSION_LESS 2.8.11)
-  include_directories("${gtest_SOURCE_DIR}/include"
-                      "${gmock_SOURCE_DIR}/include")
-endif()
- 
-# Now simply link your own targets against gtest, gmock,
-# etc. as appropriate
-include_directories(include)
-include_directories("${gtest_SOURCE_DIR}/include")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
-# Where Google Test's libraries can be found.
-#link_directories("./googletest-build/googlemock/gtest/libgtest.a")
-set (CMAKE_CXX_FLAGS "-std=c++0x")
-file(GLOB SOURCES "source/*.cpp")
-file(GLOB TEST_SOURCES "test/*.cpp")
+add_subdirectory(gtests)
 
-add_executable(google_test_hello_world ${SOURCES} app/main.cpp)
-add_executable(run_unit_tests ${SOURCES} ${TEST_SOURCES})
+find_package(Threads REQUIRED)
+enable_testing()
+include_directories(${GTEST_SOURCE_DIR} include/ ${GMOCK_SOURCE_DIR})
 
-target_link_libraries(run_unit_tests gtest gmock gmock_main)
+file(GLOB SOURCES "include/*.h src/*.h" "src/*.cpp")
+file(GLOB TEST_SOURCES "tests/*.cpp")
+add_executable(runAllTests tests.cpp tests/GoogleTestTest.cpp tests/GoogleMockTest.cpp tests/FiveTest.cpp tests/SquareTest.cpp tests/AComplexDerivativeTest.cpp tests/AComplexTest.cpp tests/DComplexTest.cpp ${TEST_SOURCES} ${SOURCES})
+add_executable(AComplexClass main.cpp ${SOURCES})
+
+target_link_libraries(runAllTests gtest gtest_main)
+target_link_libraries(runAllTests gmock gmock_main)
+add_test(AllTests runAllTests)
