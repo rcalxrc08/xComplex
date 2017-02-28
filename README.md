@@ -1,4 +1,5 @@
-# GoogleTest HelloWorld ![Build Status](https://travis-ci.org/rcalxrc08/GoogleTestHelloWorld.svg?branch=master)
+# GoogleTest HelloWorld ![Build Status](https://travis-ci.org/rcalxrc08/GoogleTestHelloWorld.svg?branch=ClionBranch)
+
 Initial setup for C++ project using Google Test with Travis
 BranchClion
 Goal:
