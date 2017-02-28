@@ -12,7 +12,7 @@ include_directories(${GTEST_SOURCE_DIR} include/ ${GMOCK_SOURCE_DIR})
 
 file(GLOB SOURCES "include/*.h src/*.h" "src/*.cpp")
 file(GLOB TEST_SOURCES "tests/*.cpp")
-add_executable(runAllTests tests.cpp tests/GoogleTestTest.cpp tests/GoogleMockTest.cpp tests/FiveTest.cpp tests/SquareTest.cpp tests/AComplexDerivativeTest.cpp tests/AComplexTest.cpp tests/DComplexTest.cpp ${TEST_SOURCES} ${SOURCES})
+add_executable(runAllTests tests.cpp tests/GoogleTestTest.cpp tests/GoogleMockTest.cpp tests/AComplexDerivativeTest.cpp tests/AComplexTest.cpp tests/DComplexTest.cpp ${TEST_SOURCES} ${SOURCES})
 add_executable(AComplexClass main.cpp ${SOURCES})
 
 target_link_libraries(runAllTests gtest gtest_main)
