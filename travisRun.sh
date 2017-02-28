@@ -10,6 +10,7 @@ make &> /dev/null
 sudo make install &> /dev/null
 sudo ldconfig &> /dev/null
 cd ../
+cd ../
 mkdir Build/
 cd Build/
 cmake ..
