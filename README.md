@@ -1,20 +1,16 @@
-# GoogleTest HelloWorld ![Build Status](https://travis-ci.org/rcalxrc08/GoogleTestHelloWorld.svg?branch=ClionBranch)
+# AComplex Class for Adjoint Algorithmic Differentiation ![Build Status](https://travis-ci.com/rcalxrc08/XComplexTest.svg?token=f7vN7DePVEtSchNhUz16&branch=ClionBranch)
 
-Initial setup for C++ project using Google Test with Travis
-BranchClion
 Goal:
 
-- Keep it simple
-- Automatically take care of dependencies
-- Recompile only when necessary
-- Use GoogleTest as an external project to be downloaded (avoid copy pasting the source in the project by hand)
+- Complex number support for Adjoint Library (Adept).
+- All the dependencies are inside.
+- It recompile every time.
+- Use GoogleTest as an internal project.
 
 Build:
 
 - `mkdir build`
 - `cd build`
 - `cmake ..`
-- `make run_unit_tests`
-- `./run_unit_tests`
-
-or simply run googleTester.sh
+- `make all`
+- `./../bin/runAllTests`
