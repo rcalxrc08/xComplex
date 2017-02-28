@@ -258,7 +258,7 @@ TEST(AComplex, cos)
 TEST(AComplex, tan)
 {
 #undef op
-#define op tan
+#define op(N) tan(N)
 	double aa= (double)rand() / RAND_MAX;
 	double bb= (double)rand() / RAND_MAX;
 	adept::Stack s1;
