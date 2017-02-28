@@ -6,7 +6,7 @@
 #include <complex>
 #define op operazione
 #define Nprint 20
-#define toll 1E-9
+#define toll1 1E-9
 TEST(AComplex, plusScalar)
 {
 #undef op
@@ -273,8 +273,9 @@ TEST(AComplex, tan)
 	z1 = op (z1);
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
-	EXPECT_EQ(z1.real(), z.getRealP().value());
-	EXPECT_EQ(z1.imag(), z.getImmP().value());
+	auto toll=1e-14;
+	EXPECT_NEAR(z1.real(), z.getRealP().value(),toll);
+	EXPECT_NEAR(z1.imag(), z.getImmP().value(),toll);
 	if (HasFailure())
 	{
 		std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;

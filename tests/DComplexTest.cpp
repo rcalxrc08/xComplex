@@ -127,8 +127,9 @@ TEST(DComplex, tan)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x);
 	x1=op (x1);
-    EXPECT_EQ(x1.real(), x.getRealP());
-	EXPECT_EQ(x1.imag(), x.getImmP());
+	double toll=1e-14;
+	EXPECT_NEAR(x1.real(), x.getRealP(),toll);
+	EXPECT_NEAR(x1.imag(), x.getImmP(),toll);
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;

@@ -6,7 +6,7 @@
 #include <complex>
 #define op operazione
 #define Nprint 20
-#define toll 1E-9
+#define toll1 1E-9
 
 TEST(AComplexDerivative, log)
 {
@@ -22,7 +22,7 @@ TEST(AComplexDerivative, log)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -31,7 +31,7 @@ TEST(AComplexDerivative, log)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);
 	if (HasFailure())
 	{
@@ -54,7 +54,7 @@ TEST(AComplexDerivative, sin)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -64,7 +64,7 @@ TEST(AComplexDerivative, sin)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);
 	if (HasFailure())
 	{
@@ -87,7 +87,7 @@ TEST(AComplexDerivative, cos)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -97,7 +97,7 @@ TEST(AComplexDerivative, cos)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);
 	if (HasFailure())
 	{
@@ -120,7 +120,7 @@ TEST(AComplexDerivative, tan)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -130,7 +130,7 @@ TEST(AComplexDerivative, tan)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);
 	if (HasFailure())
 	{
@@ -152,7 +152,7 @@ TEST(AComplexDerivative, exp)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -162,7 +162,7 @@ TEST(AComplexDerivative, exp)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);
 	if (HasFailure())
 	{
@@ -185,7 +185,7 @@ TEST(AComplexDerivative, mixed1)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -195,7 +195,7 @@ TEST(AComplexDerivative, mixed1)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
 	std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);
@@ -220,7 +220,7 @@ TEST(AComplexDerivative, mixed2)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -229,7 +229,7 @@ TEST(AComplexDerivative, mixed2)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
 	std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);
@@ -254,7 +254,7 @@ TEST(AComplexDerivative, mixed3)
 	s1.new_recording();
 	acomplex z=acomplex(a,b);
 	std::complex<double> z1=std::complex<double>(a1,b1);
-	double dx=toll;
+	double dx=toll1;
 	auto Dx=std::complex<double>(dx,0.0);
 	double yDy=op (z1+Dx).real();
 	double y=op (z1).real();
@@ -264,7 +264,7 @@ TEST(AComplexDerivative, mixed3)
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
 	double ADDer=a.get_gradient();
-	double DerToll=toll*1000;
+	double DerToll=toll1*1000;
 	std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
 	std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;
 	EXPECT_NEAR(FDDer, ADDer,DerToll);

@@ -26,6 +26,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AComplexDerivativeTest.cpp" afterPath="$PROJECT_DIR$/tests/AComplexDerivativeTest.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AComplexTest.cpp" afterPath="$PROJECT_DIR$/tests/AComplexTest.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/DComplexTest.cpp" afterPath="$PROJECT_DIR$/tests/DComplexTest.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,8 +90,8 @@
       <file leaf-file-name="AComplexTest.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/AComplexTest.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="290" column="24" lean-forward="true" selection-start-line="290" selection-start-column="24" selection-end-line="290" selection-end-column="24" />
+            <state relative-caret-position="221">
+              <caret line="279" column="5" lean-forward="true" selection-start-line="279" selection-start-column="5" selection-end-line="279" selection-end-column="5" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -98,12 +99,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DComplexTest.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/DComplexTest.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AComplexDerivativeTest.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AComplexDerivativeTest.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="82" column="22" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="221">
+              <caret line="200" column="15" lean-forward="false" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="15" />
+              <folding>
+                <marker date="1488313618719" expanded="true" signature="6286:7250" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,8 +176,9 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/include/adept.h" />
-        <option value="$PROJECT_DIR$/tests/AComplexTest.cpp" />
         <option value="$PROJECT_DIR$/tests/AComplexDerivativeTest.cpp" />
+        <option value="$PROJECT_DIR$/tests/DComplexTest.cpp" />
+        <option value="$PROJECT_DIR$/tests/AComplexTest.cpp" />
       </list>
     </option>
   </component>
@@ -468,26 +482,19 @@
       <workItem from="1488224772959" duration="2800000" />
       <workItem from="1488273428502" duration="1022000" />
       <workItem from="1488280365152" duration="3924000" />
-      <workItem from="1488310631864" duration="2521000" />
+      <workItem from="1488310631864" duration="2883000" />
     </task>
+    <task id="LOCAL-00001" summary="Modified #DEFINE for functions">
+      <created>1488313402130</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1488313402130</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="runAllTests - 2017.02.28 at 10h 21m 25s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.02.28 at 10h 22m 55s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.02.28 at 12h 14m 34s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.02.28 at 14h 15m 05s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.02.28 at 14h 32m 53s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="runAllTests - 2017.02.28 at 17h 36m 23s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
@@ -503,9 +510,24 @@
     <history-entry file="runAllTests - 2017.02.28 at 21h 17m 05s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="runAllTests - 2017.02.28 at 21h 24m 17s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.02.28 at 21h 27m 48s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.02.28 at 21h 27m 55s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.02.28 at 21h 28m 03s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.02.28 at 21h 28m 26s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10314000" />
+    <option name="totallyTimeSpent" value="10676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="912" extended-state="0" />
@@ -517,7 +539,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -536,6 +558,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modified #DEFINE for functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified #DEFINE for functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -619,6 +645,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1488225035379" expanded="true" signature="199:231" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -702,6 +732,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1488225035379" expanded="true" signature="199:231" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -774,6 +808,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1488225035379" expanded="true" signature="199:231" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -881,16 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtests/googletest/include/gtest/gtest.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -901,16 +929,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/AComplexDerivativeTest.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="82" column="22" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="200" column="15" lean-forward="false" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="15" />
+          <folding>
+            <marker date="1488313618719" expanded="true" signature="6286:7250" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/DComplexTest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/AComplexTest.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="290" column="24" lean-forward="true" selection-start-line="290" selection-start-column="24" selection-end-line="290" selection-end-column="24" />
+        <state relative-caret-position="221">
+          <caret line="279" column="5" lean-forward="true" selection-start-line="279" selection-start-column="5" selection-end-line="279" selection-end-column="5" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
