@@ -109,8 +109,11 @@ TEST(AComplex, divideScalar)
 	z1 =z1 op cc;
 	z.getRealP().set_gradient(1.0);
 	s1.reverse();
-	EXPECT_EQ(z1.real(), z.getRealP().value());
-	EXPECT_EQ(z1.imag(), z.getImmP().value());
+	/*EXPECT_EQ(z1.real(), z.getRealP().value());
+	EXPECT_EQ(z1.imag(), z.getImmP().value());*/
+    double toll=1e-14;
+    EXPECT_NEAR(z1.real(), z.getRealP().value(),toll);
+    EXPECT_NEAR(z1.imag(), z.getImmP().value(),toll);
 	if (HasFailure())
 	{
 		std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -307,4 +310,31 @@ TEST(AComplex, exp)
 		std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
 		std::cout<<"AComplex: "<<std::setprecision(Nprint)<<z1<<std::endl;
 	}
+}
+
+TEST(AComplex, MixedTest)
+{
+#undef op
+#define op(x) exp(cos(x))*x+x*sin(x)
+    double aa= (double)rand() / RAND_MAX;
+    double bb= (double)rand() / RAND_MAX;
+    adept::Stack s1;
+    adept::adouble a=aa;
+    adept::adouble b=bb;
+    double a1=aa;
+    double b1=bb;
+    s1.new_recording();
+    acomplex z=acomplex(a,b);
+    std::complex<double> z1=std::complex<double>(a1,b1);
+    z  = op (z);
+    z1 = op (z1);
+    z.getRealP().set_gradient(1.0);
+    s1.reverse();
+    EXPECT_EQ(z1.real(), z.getRealP().value());
+    EXPECT_EQ(z1.imag(), z.getImmP().value());
+    if (HasFailure())
+    {
+        std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
+        std::cout<<"AComplex: "<<std::setprecision(Nprint)<<z1<<std::endl;
+    }
 }
