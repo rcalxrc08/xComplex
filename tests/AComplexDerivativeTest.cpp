@@ -2,7 +2,6 @@
 #include "acomplex.h"
 #include "adept.h"
 #include "gtest/gtest.h"
-#include "functions.hpp"
 #include <complex>
 #define op operazione
 #define Nprint 20
