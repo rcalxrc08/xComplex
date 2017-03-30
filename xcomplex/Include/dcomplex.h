@@ -17,8 +17,6 @@ class acomplex;
 
 class dcomplex
 {
-    typedef adept::adouble AReal;
-    typedef double Real;
 private:
     Real re;
     Real im;

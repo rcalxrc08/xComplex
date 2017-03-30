@@ -12,13 +12,12 @@
 
 #define ImagUnit "j"
 //// All is passed by reference
-
 class dcomplex;
 
 class acomplex
 {
-    typedef adept::adouble AReal;
-    typedef double Real;
+/*    typedef adept::adouble AReal;
+    typedef double Real;*/
 private:
     AReal re;
     AReal im;

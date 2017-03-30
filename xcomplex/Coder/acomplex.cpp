@@ -4,8 +4,8 @@
 
 
 #include "../Include/acomplex.h"
-typedef adept::adouble AReal;
-typedef double Real;
+//#include "../Include/adatan2.h"
+
 acomplex operator+(Real c,const acomplex& in)
 {
     return in+c;
@@ -93,4 +93,20 @@ acomplex acomplex::operator/(const dcomplex& cpx)
 acomplex acomplex::operator/=(const dcomplex& cpx)
 {
     return (*this)/cpx;
+}
+
+AReal adtan2(AReal y, AReal x)
+{
+    AReal  out=0.0;
+    Real xval=x.value();
+    Real yval=y.value();
+    if(xval<0.0&&yval==0.0)
+        out=(Real)M_PI;
+    else if(xval==0.0&&yval==0.0)
+        throw new std::runtime_error("atan2 is not defined in the origin") ;
+    else if(xval!=0.0&&yval!=0.0)
+    {
+        out=2*atan(y/(sqrt(x*x+y*y)+x));
+    }
+    return out;
 }

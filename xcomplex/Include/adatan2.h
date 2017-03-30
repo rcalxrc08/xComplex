@@ -9,6 +9,9 @@
 #include <stdexcept>
 #include "adept.h"
 
+typedef double Real;
+typedef adept::adouble AReal;
+
 double adtan2(double y, double x);
 adept::adouble adtan2(adept::adouble y, adept::adouble x);
 #endif //TESI_AATAN2_H

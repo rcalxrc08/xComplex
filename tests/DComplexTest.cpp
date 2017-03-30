@@ -1,7 +1,6 @@
 #include <cassert>
 
 #include "gtest/gtest.h"
-#include "TestXComplex.h"
 #include "../xcomplex/Include/dcomplex.h"
 #include "../xcomplex/Include/acomplex.h"
 #include <cstdlib>
