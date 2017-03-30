@@ -2,12 +2,10 @@
 // Created by nico on 1/26/17.
 //
 
-//#include <acomplex.h>
-#include "../Include/acomplex.h"
 
+#include "../Include/acomplex.h"
 typedef adept::adouble AReal;
 typedef double Real;
-
 acomplex operator+(Real c,const acomplex& in)
 {
     return in+c;
@@ -50,11 +48,11 @@ acomplex operator/(const AReal& c,const acomplex& in)
 
 acomplex acomplex::operator+(const dcomplex& cpx)
 {
-    /*AReal r=(*this).getRealP()+cpx.getRealP();
-    AReal i=(*this).getImmP()+cpx.getImmP();
+    /*AReal r=(*this).getReal()+cpx.getReal();
+    AReal i=(*this).getImm()+cpx.getImm();
     acomplex outCpc=acomplex(r,i);*/
 
-    return acomplex((*this).getRealP()+cpx.getRealP(),(*this).getImmP()+cpx.getImmP());
+    return acomplex((*this).getReal()+ cpx.getReal(), (*this).getImm()+ cpx.getImm());
 }
 acomplex acomplex::operator+=(const dcomplex& cpx)
 {
@@ -73,11 +71,12 @@ acomplex acomplex::operator-=(const dcomplex& cpx)
 
 acomplex acomplex::operator*(const dcomplex& cpx)
 {
-    /* AReal r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
-     AReal i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
+    /* AReal r=(*this).getReal()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
+     AReal i=(*this).getImm()*cpx.getRealP()+(*this).getReal()*cpx.getImm();
      acomplex outCpx=acomplex(r,i);*/
 
-    return acomplex((*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP(),(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP());
+    return acomplex((*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm(), (*this).getImm()* cpx.getReal()+
+                                                                                      (*this).getReal()* cpx.getImm());
 }
 acomplex acomplex::operator*=(const dcomplex& cpx)
 {

@@ -6,14 +6,14 @@
 #include "../xcomplex/Include/acomplex.h"
 #include <cstdlib>
 #include <complex>
- 
+
 #define op operazione
 #define Nprint 20
 
 TEST(DComplex, Zero)
 {
 	dcomplex x=dcomplex();
-    EXPECT_EQ(0, x.getRealP());
+	EXPECT_EQ(0, x.getReal());
 	if(HasFailure())
 	{
 		std::cout<<"Correggi Primo Test"<<std::endl;
@@ -22,15 +22,15 @@ TEST(DComplex, Zero)
 TEST(DComplex, One)
 {
 	dcomplex x=dcomplex(1.0);
-    EXPECT_EQ(1.0, x.getRealP());
+	EXPECT_EQ(1.0, x.getReal());
 }
 TEST(DComplex, Assignment)
 {
 	double a= (double)rand() / RAND_MAX;
 	double b= (double)rand() / RAND_MAX;
 	dcomplex x=dcomplex(a,b);
-    EXPECT_EQ(a, x.getRealP());
-	EXPECT_EQ(b, x.getImmP());
+	EXPECT_EQ(a, x.getReal());
+	EXPECT_EQ(b, x.getImm());
 }
 TEST(DComplex, Sum)
 {
@@ -41,8 +41,8 @@ TEST(DComplex, Sum)
 	dcomplex x=dcomplex(a,b);
 	dcomplex x1=dcomplex(a1,b1);
 	dcomplex y=x+x1;
-    EXPECT_EQ(a+a1, y.getRealP());
-	EXPECT_EQ(b+b1, y.getImmP());
+	EXPECT_EQ(a+a1, y.getReal());
+	EXPECT_EQ(b+b1, y.getImm());
 }
 TEST(DComplex, exp)
 {
@@ -54,8 +54,8 @@ TEST(DComplex, exp)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x);
 	x1=op (x1);
-    EXPECT_EQ(x1.real(), x.getRealP());
-	EXPECT_EQ(x1.imag(), x.getImmP());
+	EXPECT_EQ(x1.real(), x.getReal());
+	EXPECT_EQ(x1.imag(), x.getImm());
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
@@ -72,11 +72,11 @@ TEST(DComplex, log)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x);
 	x1=op (x1);
-    /*EXPECT_EQ(x1.real(), x.getRealP());
-	EXPECT_EQ(x1.imag(), x.getImmP());*/
-    double toll=1e-14;
-    EXPECT_NEAR(x1.real(), x.getRealP(),toll);
-    EXPECT_NEAR(x1.imag(), x.getImmP(),toll);
+	/*EXPECT_EQ(x1.real(), x.getReal());
+    EXPECT_EQ(x1.imag(), x.getImm());*/
+	double toll=1e-14;
+	EXPECT_NEAR(x1.real(), x.getReal(),toll);
+	EXPECT_NEAR(x1.imag(), x.getImm(),toll);
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
@@ -93,8 +93,8 @@ TEST(DComplex, sin)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x);
 	x1=op (x1);
-    EXPECT_EQ(x1.real(), x.getRealP());
-	EXPECT_EQ(x1.imag(), x.getImmP());
+	EXPECT_EQ(x1.real(), x.getReal());
+	EXPECT_EQ(x1.imag(), x.getImm());
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
@@ -111,8 +111,8 @@ TEST(DComplex, cos)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x);
 	x1=op (x1);
-    EXPECT_EQ(x1.real(), x.getRealP());
-	EXPECT_EQ(x1.imag(), x.getImmP());
+	EXPECT_EQ(x1.real(), x.getReal());
+	EXPECT_EQ(x1.imag(), x.getImm());
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
@@ -130,8 +130,8 @@ TEST(DComplex, tan)
 	x=op (x);
 	x1=op (x1);
 	double toll=1e-14;
-	EXPECT_NEAR(x1.real(), x.getRealP(),toll);
-	EXPECT_NEAR(x1.imag(), x.getImmP(),toll);
+	EXPECT_NEAR(x1.real(), x.getReal(),toll);
+	EXPECT_NEAR(x1.imag(), x.getImm(),toll);
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;
@@ -149,8 +149,8 @@ TEST(DComplex, pow)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x,n);
 	x1=op (x1,n);
-    EXPECT_EQ(x1.real(), x.getRealP());
-	EXPECT_EQ(x1.imag(), x.getImmP());
+	EXPECT_EQ(x1.real(), x.getReal());
+	EXPECT_EQ(x1.imag(), x.getImm());
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;

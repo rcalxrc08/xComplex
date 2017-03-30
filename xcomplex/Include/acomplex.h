@@ -14,34 +14,36 @@
 //// All is passed by reference
 
 class dcomplex;
+
 class acomplex
 {
     typedef adept::adouble AReal;
     typedef double Real;
 private:
-    AReal realP;
-    AReal immP;
+    AReal re;
+    AReal im;
 public:
-    explicit acomplex (const AReal& RealP=0.0,const AReal& ImmP=0.0) :realP(RealP),immP(ImmP){}
+    explicit acomplex () :re(),im(){}
+    explicit acomplex (const AReal& RealP,const AReal& im) :re(RealP),im(im){}
 
-    AReal getRealP() const {return realP;}
+    AReal getReal() const {return re;}
 
-//    void setRealP(AReal& real) {acomplex::realP = real;}
+//    void setRealP(AReal& re) {acomplex::re = re;}
 
-    AReal getImmP() const {return immP;}
+    AReal getImm() const {return im;}
 
-//    void setImmP(AReal& immP) {acomplex::immP = immP;}
+//    void setim(AReal& im) {acomplex::im = im;}
 
-    AReal getRho() const {return sqrt(realP*realP+immP*immP);}
+    AReal getRho() const {return sqrt(re*re+im*im);}
 
-    AReal getTheta() const {return adtan2(immP,realP);}
+    AReal getTheta() const {return adtan2(im,re);}
 
-    AReal getNormSqr() const {return realP*realP+immP*immP;}
+    AReal getNormSqr() const {return re*re+im*im;}
 
 ////Operators
     bool operator==(acomplex& o)
     {
-        return ((*this).getImmP()==o.getImmP()&&(*this).getRealP()==o.getRealP());
+        return ((*this).getImm()==o.getImm()&&(*this).getReal()==o.getReal());
     }
 
     bool operator!=(acomplex& o)
@@ -52,53 +54,53 @@ public:
 ////Mathematical Operators
     inline acomplex operator+(const AReal& cpx) //Adouble SUM
     const{
-        /*AReal r=(*this).getRealP()+cpx;
-        AReal i=(*this).getImmP();*/
-//        acomplex outCpc=acomplex((*this).getRealP()+cpx,(*this).getImmP());
+        /*AReal r=(*this).getReal()+cpx;
+        AReal i=(*this).getImm();*/
+//        acomplex outCpc=acomplex((*this).getReal()+cpx,(*this).getImm());
 
-        return acomplex((*this).getRealP()+cpx,(*this).getImmP());
+        return acomplex((*this).getReal()+cpx,(*this).getImm());
     }
     inline acomplex operator+(const Real& cpx) //Double SUM
     const{
-        /* AReal r=(*this).getRealP()+cpx;
-         AReal i=(*this).getImmP();
+        /* AReal r=(*this).getReal()+cpx;
+         AReal i=(*this).getImm();
          acomplex outCpc=acomplex(r,i);*/
 
-        return acomplex((*this).getRealP()+cpx,(*this).getImmP());
+        return acomplex((*this).getReal()+cpx,(*this).getImm());
     }
     inline acomplex operator+(const acomplex& cpx) //Acomplex SUM
     const{
-        /* AReal r = (*this).getRealP() + cpx.getRealP();
-         AReal i = (*this).getImmP() + cpx.getImmP();
+        /* AReal r = (*this).getReal() + cpx.getReal();
+         AReal i = (*this).getImm() + cpx.getImm();
          acomplex outCpc = acomplex(r, i);*/
 
-        return acomplex((*this).getRealP() + cpx.getRealP(),(*this).getImmP() + cpx.getImmP());
+        return acomplex((*this).getReal() + cpx.getReal(),(*this).getImm() + cpx.getImm());
     }
 
 
     inline acomplex operator/(const Real& cpx)
     const{
-        /*  AReal r=(*this).getRealP();
-          AReal i=(*this).getImmP();
+        /*  AReal r=(*this).getReal();
+          AReal i=(*this).getImm();
           acomplex outCpx=acomplex(r/cpx,i/cpx);
   */
-        return acomplex((*this).getRealP()/cpx,(*this).getImmP()/cpx);
+        return acomplex((*this).getReal()/cpx,(*this).getImm()/cpx);
     }
     inline acomplex operator*(const AReal& cpx)
     const{
-        /*AReal r=(*this).getRealP();
-        AReal i=(*this).getImmP();
+        /*AReal r=(*this).getReal();
+        AReal i=(*this).getImm();
         acomplex outCpx=acomplex(r*cpx,i*cpx);*/
 
-        return acomplex((*this).getRealP()*cpx,(*this).getImmP()*cpx);
+        return acomplex((*this).getReal()*cpx,(*this).getImm()*cpx);
     }
     inline acomplex operator/(const AReal& cpx)
     const{
-        /*AReal r=(*this).getRealP();
-        AReal i=(*this).getImmP();
+        /*AReal r=(*this).getReal();
+        AReal i=(*this).getImm();
         acomplex outCpx=acomplex(r/cpx,i/cpx);*/
 
-        return acomplex((*this).getRealP()/cpx,(*this).getImmP()/cpx);
+        return acomplex((*this).getReal()/cpx,(*this).getImm()/cpx);
     }
 
 
@@ -133,24 +135,24 @@ public:
     inline acomplex operator-(const acomplex& cpx)
     {
 
-//        acomplex outCpc=acomplex((*this).getRealP()-cpx.getRealP(),(*this).getImmP()-cpx.getImmP());
+//        acomplex outCpc=acomplex((*this).getReal()-cpx.getReal(),(*this).getImm()-cpx.getImm());
 
-        return acomplex((*this).getRealP()-cpx.getRealP(),(*this).getImmP()-cpx.getImmP());;
+        return acomplex((*this).getReal()-cpx.getReal(),(*this).getImm()-cpx.getImm());;
     }
     inline acomplex operator-(const AReal& cpx)
     {
 
-//        acomplex outCpc=acomplex((*this).getRealP()-cpx,(*this).getImmP());
+//        acomplex outCpc=acomplex((*this).getReal()-cpx,(*this).getImm());
 
-        return acomplex((*this).getRealP()-cpx,(*this).getImmP());
+        return acomplex((*this).getReal()-cpx,(*this).getImm());
     }
 
     inline acomplex operator-(const Real& cpx)
     {
 
-//        acomplex outCpc=acomplex((*this).getRealP()-cpx,(*this).getImmP());
+//        acomplex outCpc=acomplex((*this).getReal()-cpx,(*this).getImm());
 
-        return acomplex((*this).getRealP()-cpx,(*this).getImmP());
+        return acomplex((*this).getReal()-cpx,(*this).getImm());
     }
 
     inline acomplex operator-=(const acomplex& cpx)
@@ -160,20 +162,20 @@ public:
 
     inline acomplex operator*(const Real& cpx)
     {
-        /*AReal r=(*this).getRealP();
-        AReal i=(*this).getImmP();
+        /*AReal r=(*this).getReal();
+        AReal i=(*this).getImm();
         acomplex outCpx=acomplex(r*cpx,i*cpx);*/
 
-        return acomplex((*this).getRealP()*cpx,(*this).getImmP()*cpx);
+        return acomplex((*this).getReal()*cpx,(*this).getImm()*cpx);
     }
 
     inline acomplex operator*(const acomplex& cpx)
     const{
-        /*AReal r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
-        AReal i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
-        acomplex outCpx=acomplex((*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP(),(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP());*/
+        /*AReal r=(*this).getReal()*cpx.getReal()-(*this).getImm()*cpx.getImm();
+        AReal i=(*this).getImm()*cpx.getReal()+(*this).getReal()*cpx.getImm();
+        acomplex outCpx=acomplex((*this).getReal()*cpx.getReal()-(*this).getImm()*cpx.getImm(),(*this).getImm()*cpx.getReal()+(*this).getReal()*cpx.getImm());*/
 
-        return acomplex((*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP(),(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP());
+        return acomplex((*this).getReal()*cpx.getReal()-(*this).getImm()*cpx.getImm(),(*this).getImm()*cpx.getReal()+(*this).getReal()*cpx.getImm());
     }
 
     inline acomplex operator*=(const acomplex& cpx)
@@ -183,12 +185,12 @@ public:
 
     inline acomplex operator/(const acomplex& cpx)
     {
-//        AReal r=((*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP());
-//        AReal i=((*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP());
+//        AReal r=((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm());
+//        AReal i=((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm());
 //        AReal Rho=cpx.getNormSqr();
-//        acomplex outCpx=acomplex(((*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP())/cpx.getNormSqr(),((*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP())/cpx.getNormSqr());
+//        acomplex outCpx=acomplex(((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm())/cpx.getNormSqr(),((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm())/cpx.getNormSqr());
 
-        return acomplex(((*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP())/cpx.getNormSqr(),((*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP())/cpx.getNormSqr());
+        return acomplex(((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm())/cpx.getNormSqr(),((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm())/cpx.getNormSqr());
     }
 
     inline acomplex operator/=(const acomplex& cpx)
@@ -198,11 +200,11 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, acomplex& obj)
     {
-        AReal tmp1=-1.0*obj.getImmP();
-        if(obj.getImmP()>=0.0)
-            os<<obj.getRealP()<<" + "<<ImagUnit<<" "<<obj.getImmP();
+        Real tmp1=adept::value(-1.0*obj.getImm());
+        if(obj.getImm()>=0.0)
+            os<<obj.getReal()<<" + "<<ImagUnit<<" "<<obj.getImm();
         else
-            os<<obj.getRealP()<<" - "<<ImagUnit<<" "<<(tmp1);
+            os<<obj.getReal()<<" - "<<ImagUnit<<" "<<(tmp1);
 
         return os;
     }
@@ -210,8 +212,8 @@ public:
 ////Mathematical Operations
     /*acomplex conj()
     {
-        AReal r=(*this).getRealP();
-        AReal i=(*this).getImmP();
+        AReal r=(*this).getReal();
+        AReal i=(*this).getImm();
         acomplex outCpx=acomplex(r,-1.*i);
 
         return outCpx;
@@ -219,8 +221,8 @@ public:
 
     friend acomplex conj(acomplex in)
     {
-        AReal r=(in).getRealP();
-        AReal i=(in).getImmP();
+        AReal r=(in).getReal();
+        AReal i=(in).getImm();
         acomplex outCpx=acomplex(r,-1.*i);
 
         return outCpx;
@@ -228,7 +230,6 @@ public:
 
     friend acomplex pow(const acomplex& in,const AReal& n)
     {
-        using namespace std;
         /*AReal Rho=in.getRho();
         Rho=adept::pow(Rho,n);
         AReal Theta=n*in.getTheta();
@@ -239,7 +240,6 @@ public:
 
     friend acomplex pow(const acomplex& in,Real n)
     {
-        using namespace std;
 //        AReal Rho=adept::pow(in.getRho(),n);
 //        Rho=adept::pow(Rho,n);
 //        Rho=adept::pow(Rho,n);
@@ -251,51 +251,47 @@ public:
 
     friend acomplex exp(const acomplex& in)
     {
-        using namespace std;
-        /*AReal r1=exp(in.getRealP());
-        AReal i1=in.getImmP();*/
+        /*AReal r1=exp(in.getReal());
+        AReal i1=in.getImm();*/
 
-        return acomplex(exp(in.getRealP())*cos(in.getImmP()),exp(in.getRealP())*sin(in.getImmP()));
+        return acomplex(exp(in.getReal())*cos(in.getImm()),exp(in.getReal())*sin(in.getImm()));
     }
 
     friend acomplex cos(const acomplex& in)
     {
-        using namespace std;
-        /*AReal r1=(in).getRealP();
-        AReal i1=(in).getImmP();*/
-        /*    AReal r=cosh((in).getImmP())*cos((in).getRealP());
-            AReal i=-1.*sin((in).getRealP())*sinh((in).getImmP());*/
-//        acomplex outCpx=acomplex(cosh((in).getImmP())*cos((in).getRealP()),-1.*sin((in).getRealP())*sinh((in).getImmP()));
+        /*AReal r1=(in).getReal();
+        AReal i1=(in).getImm();*/
+        /*    AReal r=cosh((in).getImm())*cos((in).getReal());
+            AReal i=-1.*sin((in).getReal())*sinh((in).getImm());*/
+//        acomplex outCpx=acomplex(cosh((in).getImm())*cos((in).getReal()),-1.*sin((in).getReal())*sinh((in).getImm()));
 
-        return acomplex(cosh((in).getImmP())*cos((in).getRealP()),-1.*sin((in).getRealP())*sinh((in).getImmP()));
+        return acomplex(cosh((in).getImm())*cos((in).getReal()),-1.*sin((in).getReal())*sinh((in).getImm()));
     }
 
     friend acomplex sin(const acomplex& in)
     {
-        using namespace std;
 //        using namespace adept;
-        /* AReal r1=(in).getRealP();
-         AReal i1=(in).getImmP();
-         AReal r=sin((in).getRealP())*cosh((in).getImmP());
-         AReal i=cos((in).getRealP())*sinh((in).getImmP());
-         acomplex outCpx=acomplex(sin((in).getRealP())*cosh((in).getImmP()),cos((in).getRealP())*sinh((in).getImmP()));
+        /* AReal r1=(in).getReal();
+         AReal i1=(in).getImm();
+         AReal r=sin((in).getReal())*cosh((in).getImm());
+         AReal i=cos((in).getReal())*sinh((in).getImm());
+         acomplex outCpx=acomplex(sin((in).getReal())*cosh((in).getImm()),cos((in).getReal())*sinh((in).getImm()));
  */
-        return acomplex(sin((in).getRealP())*cosh((in).getImmP()),cos((in).getRealP())*sinh((in).getImmP()));
+        return acomplex(sin((in).getReal())*cosh((in).getImm()),cos((in).getReal())*sinh((in).getImm()));
     }
 
     friend acomplex tan(const acomplex& in)
     {
-        using namespace std;
         /*  auto tmp1=sin(in);
           auto tmp2=cos(in);
           acomplex outCpx=tmp1/tmp2;*/
-//        return acomplex(  sin( 2.*in.getRealP() ),  sinh( 2.*in.getImmP())  )/  (  cos(2.*in.getRealP())+cosh(2*in.getImmP()));
-        return acomplex(  sin( 2.*in.getRealP() ),  sinh( 2.*in.getImmP())  )/  (  cos(2.*in.getRealP())+cosh(2*in.getImmP()));
+//        return acomplex(  sin( 2.*in.getReal() ),  sinh( 2.*in.getImm())  )/  (  cos(2.*in.getReal())+cosh(2*in.getImm()));
+        // return acomplex(  sin( 2.*in.getReal() ),  sinh( 2.*in.getImm())  )/  (  cos(2.*in.getReal())+cosh(2*in.getImm()));
+        return sin(in)/cos(in);
     }
 
     friend acomplex log(const acomplex& in)
     {
-        using namespace std;
         /*AReal r=log(in.getRho());
         AReal i=in.getTheta();
         acomplex outCpx=acomplex(log(in.getRho()),in.getTheta());*/
@@ -305,8 +301,8 @@ public:
     friend void swap(acomplex& a, acomplex& b)
     {
 
-        std::swap(a.realP, b.realP);
-        std::swap(a.immP, b.immP);
+        std::swap(a.re, b.re);
+        std::swap(a.im, b.im);
     }
     /*acomplex immUnit()
     {

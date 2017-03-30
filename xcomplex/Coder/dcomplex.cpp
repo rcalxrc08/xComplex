@@ -2,12 +2,10 @@
 // Created by nico on 1/26/17.
 //
 #include "../Include/dcomplex.h"
-
+//TODO Rifai le interazioni con gli adouble e acomplex
 ////Mixed Operators FRIEND
-
 typedef adept::adouble AReal;
 typedef double Real;
-
 dcomplex operator+(Real c,const dcomplex& in)
 {
     return in+c;
@@ -40,7 +38,7 @@ acomplex operator*(const AReal& c,const dcomplex& in)
 }
 acomplex operator/(const AReal& c,const dcomplex& in)
 {
-    acomplex tmp=acomplex(c);
+    acomplex tmp=acomplex(c,0.0);
 
     return tmp/in;
 }
@@ -48,32 +46,32 @@ acomplex operator/(const AReal& c,const dcomplex& in)
 
 acomplex dcomplex::operator+(const acomplex& cpx)
 const{
-    AReal r=(*this).getRealP()+cpx.getRealP();
-    AReal i=(*this).getImmP()+cpx.getImmP();
+    AReal r= (*this).getReal()+ cpx.getReal();
+    AReal i= (*this).getImm()+ cpx.getImm();
     acomplex outCpc=acomplex(r,i);
 
     return outCpc;
 }
 acomplex dcomplex::operator-(const acomplex& cpx)
 const{
-    AReal r=(*this).getRealP()-cpx.getRealP();
-    AReal i=(*this).getImmP()-cpx.getImmP();
+    AReal r= (*this).getReal()- cpx.getReal();
+    AReal i= (*this).getImm()- cpx.getImm();
     acomplex outCpc=acomplex(r,i);
 
     return outCpc;
 }
 acomplex dcomplex::operator*(const acomplex& cpx)
 const{
-    AReal r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
-    AReal i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
+    AReal r= (*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm();
+    AReal i= (*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm();
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
 }
 acomplex dcomplex::operator/(const acomplex& cpx)
 const{
-    AReal r=(*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP();
-    AReal i=(*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP();
+    AReal r= (*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm();
+    AReal i= (*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm();
     AReal Rho=cpx.getNormSqr();
     acomplex outCpx=acomplex(r/Rho,i/Rho);
 
@@ -82,24 +80,24 @@ const{
 ////Adouble
 acomplex dcomplex::operator+(const AReal& c)
 const{
-    AReal r=(*this).getRealP()+c;
-    AReal i=(*this).getImmP();
+    AReal r= (*this).getReal()+c;
+    AReal i= (*this).getImm();
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
 }
 acomplex dcomplex::operator-(const AReal& c)
 const{
-    AReal r=(*this).getRealP()-c;
-    AReal i=(*this).getImmP();
+    AReal r= (*this).getReal()-c;
+    AReal i= (*this).getImm();
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
 }
 acomplex dcomplex::operator*(const AReal& c)
 const{
-    AReal r=(*this).getRealP()*c;
-    AReal i=(*this).getImmP()*c;
+    AReal r= (*this).getReal()*c;
+    AReal i= (*this).getImm()*c;
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
