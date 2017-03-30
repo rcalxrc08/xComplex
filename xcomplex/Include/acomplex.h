@@ -17,6 +17,7 @@ class dcomplex;
 class acomplex
 {
     typedef adept::adouble AReal;
+    typedef double Real;
 private:
     AReal realP;
     AReal immP;
@@ -57,7 +58,7 @@ public:
 
         return acomplex((*this).getRealP()+cpx,(*this).getImmP());
     }
-    inline acomplex operator+(const double& cpx) //Double SUM
+    inline acomplex operator+(const Real& cpx) //Double SUM
     const{
         /* AReal r=(*this).getRealP()+cpx;
          AReal i=(*this).getImmP();
@@ -75,7 +76,7 @@ public:
     }
 
 
-    inline acomplex operator/(const double& cpx)
+    inline acomplex operator/(const Real& cpx)
     const{
         /*  AReal r=(*this).getRealP();
           AReal i=(*this).getImmP();
@@ -102,10 +103,10 @@ public:
 
 
     ////ADOUBLE DOUBLE
-    friend acomplex operator+(double c,const acomplex& in);
-    friend acomplex operator*(double c,const acomplex& in);
-    friend acomplex operator/(double c,const acomplex& in);
-    friend acomplex operator-(double c,const acomplex& in);
+    friend acomplex operator+(Real c,const acomplex& in);
+    friend acomplex operator*(Real c,const acomplex& in);
+    friend acomplex operator/(Real c,const acomplex& in);
+    friend acomplex operator-(Real c,const acomplex& in);
 
     friend acomplex operator+(const AReal& c,const acomplex& in);
     friend acomplex operator*(const AReal& c,const acomplex& in);
@@ -144,7 +145,7 @@ public:
         return acomplex((*this).getRealP()-cpx,(*this).getImmP());
     }
 
-    inline acomplex operator-(const double& cpx)
+    inline acomplex operator-(const Real& cpx)
     {
 
 //        acomplex outCpc=acomplex((*this).getRealP()-cpx,(*this).getImmP());
@@ -157,7 +158,7 @@ public:
         return (*this)-cpx;
     }
 
-    inline acomplex operator*(const double& cpx)
+    inline acomplex operator*(const Real& cpx)
     {
         /*AReal r=(*this).getRealP();
         AReal i=(*this).getImmP();
@@ -236,7 +237,7 @@ public:
         return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
     }
 
-    friend acomplex pow(const acomplex& in,double n)
+    friend acomplex pow(const acomplex& in,Real n)
     {
         using namespace std;
 //        AReal Rho=adept::pow(in.getRho(),n);

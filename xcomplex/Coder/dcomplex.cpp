@@ -6,20 +6,21 @@
 ////Mixed Operators FRIEND
 
 typedef adept::adouble AReal;
+typedef double Real;
 
-dcomplex operator+(double c,const dcomplex& in)
+dcomplex operator+(Real c,const dcomplex& in)
 {
     return in+c;
 }
-dcomplex operator-(double c,const dcomplex& in)
+dcomplex operator-(Real c,const dcomplex& in)
 {
     return -1.*(in-c);
 }
-dcomplex operator*(double c,const dcomplex& in)
+dcomplex operator*(Real c,const dcomplex& in)
 {
     return in*c;
 }
-dcomplex operator/(double c,const dcomplex& in)
+dcomplex operator/(Real c,const dcomplex& in)
 {
     dcomplex tmp=dcomplex(c);
     return tmp/in;

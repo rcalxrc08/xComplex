@@ -18,7 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a281b2c-2e6b-4080-ad4f-f9129f610169" name="Default" comment="Test All Green">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp" afterPath="$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp" afterPath="$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Include/acomplex.h" afterPath="$PROJECT_DIR$/xcomplex/Include/acomplex.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Include/dcomplex.h" afterPath="$PROJECT_DIR$/xcomplex/Include/dcomplex.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,29 +47,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="acomplex.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="acomplex.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <marker date="1490868380932" expanded="true" signature="175:195" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="244:270" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="320:340" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="390:438" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="494:514" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="569:593" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="649:669" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="725:782" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="834:1057" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="1109:1136" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="1188:1249" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="1301:1328" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="1380:1738" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="1790:1817" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="1869:1950" ph="{...}" />
-                <marker date="1490868380932" expanded="true" signature="2002:2029" ph="{...}" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,8 +60,8 @@
       <file leaf-file-name="dcomplex.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="128">
+              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -84,8 +70,8 @@
       <file leaf-file-name="dcomplex.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="253" column="28" lean-forward="false" selection-start-line="253" selection-start-column="28" selection-end-line="253" selection-end-column="28" />
+            <state relative-caret-position="190">
+              <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -113,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="acomplex.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="acomplex.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/acomplex.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="304">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
                 <element signature="e#86#102#0" expanded="true" />
               </folding>
@@ -189,9 +175,10 @@
         <option value="$PROJECT_DIR$/src/TestXComplex.cpp" />
         <option value="$PROJECT_DIR$/xcomplex/Coder/adatan.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp" />
-        <option value="$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp" />
         <option value="$PROJECT_DIR$/xcomplex/Include/acomplex.h" />
+        <option value="$PROJECT_DIR$/xcomplex/Include/dcomplex.h" />
+        <option value="$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp" />
+        <option value="$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp" />
       </list>
     </option>
   </component>
@@ -581,7 +568,7 @@
       <workItem from="1488310631864" duration="7389000" />
       <workItem from="1488469793379" duration="90000" />
       <workItem from="1489847919515" duration="782000" />
-      <workItem from="1490864851314" duration="3778000" />
+      <workItem from="1490864851314" duration="3978000" />
     </task>
     <task id="LOCAL-00001" summary="Modified #DEFINE for functions">
       <created>1488313402130</created>
@@ -608,9 +595,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="runAllTests - 2017.03.01 at 11h 06m 33s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="runAllTests - 2017.03.01 at 11h 55m 56s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
@@ -638,9 +622,12 @@
     <history-entry file="runAllTests - 2017.03.30 at 12h 27m 48s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="runAllTests - 2017.03.30 at 12h 31m 11s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19832000" />
+    <option name="totallyTimeSpent" value="20032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="912" extended-state="6" />
@@ -896,16 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xcomplex/Include/adatan2.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="e#83#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xcomplex/Coder/adatan.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -922,61 +899,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <marker date="1490868380932" expanded="true" signature="175:195" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="244:270" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="320:340" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="390:438" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="494:514" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="569:593" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="649:669" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="725:782" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="834:1057" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="1109:1136" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="1188:1249" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="1301:1328" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="1380:1738" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="1790:1817" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="1869:1950" ph="{...}" />
-            <marker date="1490868380932" expanded="true" signature="2002:2029" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AComplexDerivativeTest.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="41" />
-          <folding>
-            <element signature="e#43#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AComplexTest.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-656">
           <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="253" column="28" lean-forward="false" selection-start-line="253" selection-start-column="28" selection-end-line="253" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -991,11 +917,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xcomplex/Include/acomplex.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="304">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
             <element signature="e#86#102#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AComplexDerivativeTest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="41" />
+          <folding>
+            <element signature="e#43#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcomplex/Include/adatan2.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="e#83#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

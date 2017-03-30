@@ -6,22 +6,23 @@
 #include "../Include/acomplex.h"
 
 typedef adept::adouble AReal;
+typedef double Real;
 
-acomplex operator+(double c,const acomplex& in)
+acomplex operator+(Real c,const acomplex& in)
 {
     return in+c;
 }
-acomplex operator-(double c,const acomplex& in)
+acomplex operator-(Real c,const acomplex& in)
 {
     return c+(-1.*in);
 }
 
-acomplex operator*(double c,const acomplex& in)
+acomplex operator*(Real c,const acomplex& in)
 {
     return in*c;
 }
 
-acomplex operator/(double c,const acomplex& in)
+acomplex operator/(Real c,const acomplex& in)
 {
 //    AReal inv1=1./c;
     return in*(1./c);
