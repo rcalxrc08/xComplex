@@ -14,11 +14,9 @@
 //// All is passed by reference
 
 class dcomplex;
-
 class acomplex
 {
     typedef adept::adouble AReal;
-
 private:
     AReal realP;
     AReal immP;
@@ -229,6 +227,7 @@ public:
 
     friend acomplex pow(const acomplex& in,const AReal& n)
     {
+        using namespace std;
         /*AReal Rho=in.getRho();
         Rho=adept::pow(Rho,n);
         AReal Theta=n*in.getTheta();
@@ -239,6 +238,7 @@ public:
 
     friend acomplex pow(const acomplex& in,double n)
     {
+        using namespace std;
 //        AReal Rho=adept::pow(in.getRho(),n);
 //        Rho=adept::pow(Rho,n);
 //        Rho=adept::pow(Rho,n);
@@ -250,6 +250,7 @@ public:
 
     friend acomplex exp(const acomplex& in)
     {
+        using namespace std;
         /*AReal r1=exp(in.getRealP());
         AReal i1=in.getImmP();*/
 
@@ -258,6 +259,7 @@ public:
 
     friend acomplex cos(const acomplex& in)
     {
+        using namespace std;
         /*AReal r1=(in).getRealP();
         AReal i1=(in).getImmP();*/
         /*    AReal r=cosh((in).getImmP())*cos((in).getRealP());
@@ -269,6 +271,7 @@ public:
 
     friend acomplex sin(const acomplex& in)
     {
+        using namespace std;
 //        using namespace adept;
         /* AReal r1=(in).getRealP();
          AReal i1=(in).getImmP();
@@ -281,6 +284,7 @@ public:
 
     friend acomplex tan(const acomplex& in)
     {
+        using namespace std;
         /*  auto tmp1=sin(in);
           auto tmp2=cos(in);
           acomplex outCpx=tmp1/tmp2;*/
@@ -290,6 +294,7 @@ public:
 
     friend acomplex log(const acomplex& in)
     {
+        using namespace std;
         /*AReal r=log(in.getRho());
         AReal i=in.getTheta();
         acomplex outCpx=acomplex(log(in.getRho()),in.getTheta());*/
