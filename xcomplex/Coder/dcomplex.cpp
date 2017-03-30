@@ -5,24 +5,6 @@
 //TODO Rifai le interazioni con gli adouble e acomplex
 ////Mixed Operators FRIEND
 
-dcomplex operator+(Real c,const dcomplex& in)
-{
-    return in+c;
-}
-dcomplex operator-(Real c,const dcomplex& in)
-{
-    return -1.*(in-c);
-}
-dcomplex operator*(Real c,const dcomplex& in)
-{
-    return in*c;
-}
-dcomplex operator/(Real c,const dcomplex& in)
-{
-    dcomplex tmp=dcomplex(c);
-    return tmp/in;
-}
-
 acomplex operator+(const AReal& c,const dcomplex& in)
 {
     return in+c;
@@ -106,18 +88,4 @@ const{
     AReal tm=1./c;
     acomplex outCpx=(*this)*tm;
     return outCpx;
-}
-
-Real adtan2(Real y, Real x)
-{
-    Real out=(Real) 0.0;
-    if(x<0.0&&y==0.0)
-        out=(Real)M_PI;
-    else if(x==0.0&&y==0.0)
-        throw new std::runtime_error("atan2 is not defined in the origin") ;
-    else if(x!=0.0&&y!=0.0)
-    {
-        out=2*atan(y/(sqrt(x*x+y*y)+x));
-    }
-    return out;
 }

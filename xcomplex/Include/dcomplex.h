@@ -279,5 +279,21 @@ public:
     }
 };
 
-
+inline dcomplex operator+(Real c,const dcomplex& in)
+{
+    return in+c;
+}
+inline dcomplex operator-(Real c,const dcomplex& in)
+{
+    return -1.*(in-c);
+}
+inline dcomplex operator*(Real c,const dcomplex& in)
+{
+    return in*c;
+}
+inline dcomplex operator/(Real c,const dcomplex& in)
+{
+    dcomplex tmp=dcomplex(c);
+    return tmp/in;
+}
 #endif //TESI_DCOMPLEX_H

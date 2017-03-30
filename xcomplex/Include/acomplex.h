@@ -309,4 +309,46 @@ public:
     }*/
 };
 
+////acomplex.cpp
+inline acomplex operator+(Real c,const acomplex& in)
+{
+    return in+c;
+}
+
+inline acomplex operator-(Real c,const acomplex& in)
+{
+    return c+(-1.*in);
+}
+
+inline acomplex operator*(Real c,const acomplex& in)
+{
+    return in*c;
+}
+
+inline acomplex operator/(Real c,const acomplex& in)
+{
+//    AReal inv1=1./c;
+    return in*(1./c);
+}
+
+inline acomplex operator+(const AReal& c,const acomplex& in)
+{
+    return in+c;
+}
+inline acomplex operator-(const AReal& c,const acomplex& in)
+{
+    return -1.*in+c;
+}
+
+inline acomplex operator*(const AReal& c,const acomplex& in)
+{
+    return in*c;
+}
+
+inline acomplex operator/(const AReal& c,const acomplex& in)
+{
+//    AReal inv1=1./c;
+    return ((AReal)(1./c))*in;
+}
+
 #endif //TESI_ACOMPLEX_H
