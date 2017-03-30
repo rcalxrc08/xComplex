@@ -4,6 +4,8 @@
 
 #include <acomplex.h>
 
+typedef adept::adouble AReal;
+
 acomplex operator+(double c,const acomplex& in)
 {
     return in+c;
@@ -20,34 +22,34 @@ acomplex operator*(double c,const acomplex& in)
 
 acomplex operator/(double c,const acomplex& in)
 {
-//    adept::adouble inv1=1./c;
+//    AReal inv1=1./c;
     return in*(1./c);
 }
 
-acomplex operator+(const adept::adouble& c,const acomplex& in)
+acomplex operator+(const AReal& c,const acomplex& in)
 {
     return in+c;
 }
-acomplex operator-(const adept::adouble& c,const acomplex& in)
+acomplex operator-(const AReal& c,const acomplex& in)
 {
     return -1.*in+c;
 }
 
-acomplex operator*(const adept::adouble& c,const acomplex& in)
+acomplex operator*(const AReal& c,const acomplex& in)
 {
     return in*c;
 }
 
-acomplex operator/(const adept::adouble& c,const acomplex& in)
+acomplex operator/(const AReal& c,const acomplex& in)
 {
-//    adept::adouble inv1=1./c;
-    return ((adept::adouble)(1./c))*in;
+//    AReal inv1=1./c;
+    return ((AReal)(1./c))*in;
 }
 
 acomplex acomplex::operator+(const dcomplex& cpx)
 {
-    /*adept::adouble r=(*this).getRealP()+cpx.getRealP();
-    adept::adouble i=(*this).getImmP()+cpx.getImmP();
+    /*AReal r=(*this).getRealP()+cpx.getRealP();
+    AReal i=(*this).getImmP()+cpx.getImmP();
     acomplex outCpc=acomplex(r,i);*/
 
     return acomplex((*this).getRealP()+cpx.getRealP(),(*this).getImmP()+cpx.getImmP());
@@ -69,9 +71,9 @@ acomplex acomplex::operator-=(const dcomplex& cpx)
 
 acomplex acomplex::operator*(const dcomplex& cpx)
 {
-   /* adept::adouble r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
-    adept::adouble i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
-    acomplex outCpx=acomplex(r,i);*/
+    /* AReal r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
+     AReal i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
+     acomplex outCpx=acomplex(r,i);*/
 
     return acomplex((*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP(),(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP());
 }

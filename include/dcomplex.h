@@ -17,6 +17,7 @@ class acomplex;
 
 class dcomplex
 {
+    typedef adept::adouble AReal;
 private:
     double realP;
     double immP;
@@ -128,15 +129,15 @@ public:
     friend dcomplex operator*(double c,const dcomplex& in);
     friend dcomplex operator/(double c,const dcomplex& in);
 
-    friend acomplex operator+(const adept::adouble& c,const dcomplex& in);
-    friend acomplex operator-(const adept::adouble& c,const dcomplex& in);
-    friend acomplex operator*(const adept::adouble& c,const dcomplex& in);
-    friend acomplex operator/(const adept::adouble& c,const dcomplex& in);
+    friend acomplex operator+(const AReal& c,const dcomplex& in);
+    friend acomplex operator-(const AReal& c,const dcomplex& in);
+    friend acomplex operator*(const AReal& c,const dcomplex& in);
+    friend acomplex operator/(const AReal& c,const dcomplex& in);
 
     dcomplex operator+(const double& c)
     const{
-       /* double r=c+(*this).getRealP();
-        dcomplex outCpx=dcomplex(r,(*this).getImmP());*/
+        /* double r=c+(*this).getRealP();
+         dcomplex outCpx=dcomplex(r,(*this).getImmP());*/
 
         return dcomplex(c+(*this).getRealP(),(*this).getImmP());
     }
@@ -149,9 +150,9 @@ public:
     }
     dcomplex operator*(const double& c)
     const{
-       /* double r=c*(*this).getRealP();
-        double i=c*(*this).getImmP();
-        dcomplex outCpx=dcomplex(c*(*this).getRealP(),c*(*this).getImmP());*/
+        /* double r=c*(*this).getRealP();
+         double i=c*(*this).getImmP();
+         dcomplex outCpx=dcomplex(c*(*this).getRealP(),c*(*this).getImmP());*/
 
         return dcomplex(c*(*this).getRealP(),c*(*this).getImmP());
     }
@@ -181,10 +182,10 @@ public:
 ////Mixed Operators
 ////Adouble
 
-    acomplex operator*(const adept::adouble& c)const;////ADJ
-    acomplex operator/(const adept::adouble& c)const;////ADJ
-    acomplex operator+(const adept::adouble& c)const;////ADJ
-    acomplex operator-(const adept::adouble& c)const;////ADJ
+    acomplex operator*(const AReal& c)const;////ADJ
+    acomplex operator/(const AReal& c)const;////ADJ
+    acomplex operator+(const AReal& c)const;////ADJ
+    acomplex operator-(const AReal& c)const;////ADJ
 ////Acomplex
     acomplex operator-(const acomplex& cpx)const;////ADJ
     acomplex operator+(const acomplex& cpx)const;////ADJ

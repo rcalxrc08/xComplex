@@ -4,6 +4,9 @@
 #include "dcomplex.h"
 
 ////Mixed Operators FRIEND
+
+typedef adept::adouble AReal;
+
 dcomplex operator+(double c,const dcomplex& in)
 {
     return in+c;
@@ -22,19 +25,19 @@ dcomplex operator/(double c,const dcomplex& in)
     return tmp/in;
 }
 
-acomplex operator+(const adept::adouble& c,const dcomplex& in)
+acomplex operator+(const AReal& c,const dcomplex& in)
 {
     return in+c;
 }
-acomplex operator-(const adept::adouble& c,const dcomplex& in)
+acomplex operator-(const AReal& c,const dcomplex& in)
 {
     return -1.*(in-c);
 }
-acomplex operator*(const adept::adouble& c,const dcomplex& in)
+acomplex operator*(const AReal& c,const dcomplex& in)
 {
     return in*c;
 }
-acomplex operator/(const adept::adouble& c,const dcomplex& in)
+acomplex operator/(const AReal& c,const dcomplex& in)
 {
     acomplex tmp=acomplex(c);
 
@@ -44,65 +47,65 @@ acomplex operator/(const adept::adouble& c,const dcomplex& in)
 
 acomplex dcomplex::operator+(const acomplex& cpx)
 const{
-    adept::adouble r=(*this).getRealP()+cpx.getRealP();
-    adept::adouble i=(*this).getImmP()+cpx.getImmP();
+    AReal r=(*this).getRealP()+cpx.getRealP();
+    AReal i=(*this).getImmP()+cpx.getImmP();
     acomplex outCpc=acomplex(r,i);
 
     return outCpc;
 }
 acomplex dcomplex::operator-(const acomplex& cpx)
 const{
-    adept::adouble r=(*this).getRealP()-cpx.getRealP();
-    adept::adouble i=(*this).getImmP()-cpx.getImmP();
+    AReal r=(*this).getRealP()-cpx.getRealP();
+    AReal i=(*this).getImmP()-cpx.getImmP();
     acomplex outCpc=acomplex(r,i);
 
     return outCpc;
 }
 acomplex dcomplex::operator*(const acomplex& cpx)
 const{
-    adept::adouble r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
-    adept::adouble i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
+    AReal r=(*this).getRealP()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
+    AReal i=(*this).getImmP()*cpx.getRealP()+(*this).getRealP()*cpx.getImmP();
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
 }
 acomplex dcomplex::operator/(const acomplex& cpx)
 const{
-    adept::adouble r=(*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP();
-    adept::adouble i=(*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP();
-    adept::adouble Rho=cpx.getNormSqr();
+    AReal r=(*this).getRealP()*cpx.getRealP()+(*this).getImmP()*cpx.getImmP();
+    AReal i=(*this).getImmP()*cpx.getRealP()-(*this).getRealP()*cpx.getImmP();
+    AReal Rho=cpx.getNormSqr();
     acomplex outCpx=acomplex(r/Rho,i/Rho);
 
     return outCpx;
 }
 ////Adouble
-acomplex dcomplex::operator+(const adept::adouble& c)
+acomplex dcomplex::operator+(const AReal& c)
 const{
-    adept::adouble r=(*this).getRealP()+c;
-    adept::adouble i=(*this).getImmP();
+    AReal r=(*this).getRealP()+c;
+    AReal i=(*this).getImmP();
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
 }
-acomplex dcomplex::operator-(const adept::adouble& c)
+acomplex dcomplex::operator-(const AReal& c)
 const{
-    adept::adouble r=(*this).getRealP()-c;
-    adept::adouble i=(*this).getImmP();
+    AReal r=(*this).getRealP()-c;
+    AReal i=(*this).getImmP();
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
 }
-acomplex dcomplex::operator*(const adept::adouble& c)
+acomplex dcomplex::operator*(const AReal& c)
 const{
-    adept::adouble r=(*this).getRealP()*c;
-    adept::adouble i=(*this).getImmP()*c;
+    AReal r=(*this).getRealP()*c;
+    AReal i=(*this).getImmP()*c;
     acomplex outCpx=acomplex(r,i);
 
     return outCpx;
 }
-acomplex dcomplex::operator/(const adept::adouble& c)
+acomplex dcomplex::operator/(const AReal& c)
 const{
-    adept::adouble tm=1./c;
+    AReal tm=1./c;
     acomplex outCpx=(*this)*tm;
     return outCpx;
 }
