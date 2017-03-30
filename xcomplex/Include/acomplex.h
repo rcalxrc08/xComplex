@@ -6,7 +6,7 @@
 #define TESI_ACOMPLEX_H
 #include <cmath>
 #include <vector>
-#include <adept.h>
+#include "../../Adept/adept.h"
 #include "adatan2.h"
 #include "dcomplex.h"
 

@@ -7,7 +7,7 @@
 
 #include <math.h>
 #include <stdexcept>
-#include "adept.h"
+#include "../../Adept/adept.h"
 
 typedef double Real;
 typedef adept::adouble AReal;

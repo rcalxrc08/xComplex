@@ -9,7 +9,7 @@
 ////Include
 #include <cmath>
 #include <vector>
-#include <adept.h>
+#include "../../Adept/adept.h"
 #include "adatan2.h"
 #include "acomplex.h"
 
