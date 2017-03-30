@@ -1,7 +1,7 @@
 //
 // Created by nico on 1/28/17.
 //
-#include "adatan2.h"
+#include "../Include/adatan2.h"
 #include "adept.h"
 
 adept::adouble adtan2(adept::adouble y, adept::adouble x)
