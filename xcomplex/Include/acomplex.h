@@ -34,7 +34,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, acomplex& obj)
     {
-        Real tmp1=adept::value(-1.0*obj.getImm());
+        Real tmp1=LVAL (-1.0*obj.getImm()) RVAL;
         if(obj.getImm()>=0.0)
             os<<obj.getReal()<<" + "<<ImagUnit<<" "<<obj.getImm();
         else
