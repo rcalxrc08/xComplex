@@ -2,13 +2,13 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="AComplexClass" targetName="AComplexClass" />
-      <config projectName="AComplexClass" targetName="gtest" />
-      <config projectName="AComplexClass" targetName="myProject" />
-      <config projectName="AComplexClass" targetName="gmock" />
-      <config projectName="AComplexClass" targetName="gtest_main" />
-      <config projectName="AComplexClass" targetName="gmock_main" />
       <config projectName="AComplexClass" targetName="runAllTests" />
+      <config projectName="AComplexClass" targetName="gmock_main" />
+      <config projectName="AComplexClass" targetName="AComplexClass" />
+      <config projectName="AComplexClass" targetName="myProject" />
+      <config projectName="AComplexClass" targetName="gtest" />
+      <config projectName="AComplexClass" targetName="gtest_main" />
+      <config projectName="AComplexClass" targetName="gmock" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -18,8 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a281b2c-2e6b-4080-ad4f-f9129f610169" name="Default" comment="Test All Green">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Include/acomplex.h" afterPath="$PROJECT_DIR$/xcomplex/Include/acomplex.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Include/adatan2.h" afterPath="$PROJECT_DIR$/xcomplex/Include/adatan2.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="199" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+              <caret line="199" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding>
                 <element signature="e#120#136#0" expanded="true" />
               </folding>
@@ -50,8 +49,8 @@
       <file leaf-file-name="adatan2.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/adatan2.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            <state relative-caret-position="352">
+              <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
               <folding>
                 <element signature="e#83#100#0" expanded="true" />
                 <element signature="e#167#372#0" expanded="true" />
@@ -65,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+              <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -75,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -85,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/acomplex.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
-              <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+              <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
               <folding>
                 <element signature="e#86#102#0" expanded="true" />
               </folding>
@@ -555,7 +554,7 @@
       <workItem from="1490890076570" duration="20000" />
       <workItem from="1490946254900" duration="4353000" />
       <workItem from="1490953566952" duration="6120000" />
-      <workItem from="1490965662964" duration="2094000" />
+      <workItem from="1490965662964" duration="2959000" />
     </task>
     <task id="LOCAL-00001" summary="Modified #DEFINE for functions">
       <created>1488313402130</created>
@@ -582,18 +581,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="runAllTests - 2017.03.31 at 14h 33m 28s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.03.31 at 14h 33m 55s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.03.31 at 15h 07m 48s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.03.31 at 15h 11m 54s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="runAllTests - 2017.03.31 at 15h 13m 33s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
@@ -612,9 +599,21 @@
     <history-entry file="runAllTests - 2017.03.31 at 15h 42m 35s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="runAllTests - 2017.03.31 at 15h 47m 57s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.03.31 at 15h 52m 09s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.03.31 at 15h 54m 27s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.03.31 at 15h 56m 47s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40877000" />
+    <option name="totallyTimeSpent" value="41742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="912" extended-state="6" />
@@ -625,7 +624,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -901,7 +900,7 @@
     <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="199" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <caret line="199" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding>
             <element signature="e#120#136#0" expanded="true" />
           </folding>
@@ -911,7 +910,7 @@
     <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -919,7 +918,7 @@
     <entry file="file://$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -927,7 +926,7 @@
     <entry file="file://$PROJECT_DIR$/xcomplex/Include/acomplex.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
           <folding>
             <element signature="e#86#102#0" expanded="true" />
           </folding>
@@ -936,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xcomplex/Include/adatan2.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        <state relative-caret-position="352">
+          <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
           <folding>
             <element signature="e#83#100#0" expanded="true" />
             <element signature="e#167#372#0" expanded="true" />
