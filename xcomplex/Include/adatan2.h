@@ -28,6 +28,13 @@ typedef adept::adouble AReal;
 #define RVAL .value()
 #endif
 
+////ADEPT 2.0 LIBRARY
+#ifdef USE_ADEPT2
+#include "adept.h"
+typedef adept::adouble AReal;
+#define LVAL
+#define RVAL .value()
+#endif
 typedef double Real;
 
 
