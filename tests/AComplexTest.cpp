@@ -318,12 +318,103 @@ TEST(AComplex, MixedTest)
     double aa= (double)rand() / RAND_MAX;
     double bb= (double)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
+    adept::adouble a2=aa;
+    adept::adouble b2=bb;
     double a1=aa;
     double b1=bb;
     s1.new_recording();
-    acomplex z=acomplex(a,b);
+
+
+    //USELESS, check if it compiles
+    adept::adouble a=1.0;
+    adept::adouble b=1.0;
+    acomplex X=acomplex(a,b);
+    dcomplex c=dcomplex(1.0,0.0);
+    c+=4;
+    c=c+6;
+    auto d=c*b;
+    d=d-X;
+    d=X-d;
+    acomplex X1=c/X+X*X+X+exp(c)*c*a*acomplex(1.0,0.0)*exp(c)+sin(X)+exp(X)*exp(c)*tan(c)+c+exp(c)+exp(X)/c;
+    X1-=2.;
+    X1-=a;
+    //Mixed Complex
+    X1*=c;
+    X1/=c;
+    X1+=c;
+    X1-=c;
+    X1=X1+c;
+    X1=c+X1;
+    X1=c*X1;
+    X1=X1*c;
+    X1=X1/c;
+    X1=c/X1;
+    X1=c-X1;
+    X1=X1-c;
+    X1+=c;
+    X1*=c;
+    X1/=c;
+    X1-=c;
+    //Mixed ADouble
+    X1=a+X1;
+    X1=X1+a;
+    X1=X1-a;
+    X1=a-X1;
+    X1=a/X1;
+    X1=X1/a;
+    X1=a+X1;
+    X1=X1+a;
+    X1=X1*a;
+    X1=a*X1;
+
+
+//Mixed Double
+    X1=X1/2.;
+    X1=2./X1;
+    X1=2.+X1;
+    X1=X1+2.;
+    X1=2.*X1;//Da Modificare
+    X1=X1*2.;
+    X1=2-X1;
+    X1=X1-2.;
+
+    X1*=X1;
+    X1/=X1;
+    X1-=X1;
+    X1+=X1;
+    //
+    //// FAILS
+    /*X1-=2.;
+    X1+=2.;
+    X1/=2.;
+    X1*=2.;*/
+    ////FAILS
+/*    X1*=b;
+    X1/=b;
+    X1+=b;
+    X1-=b;*/
+    //
+    X1*=c;
+    X1/=c;
+    X1-=c;
+    X1+=c;
+    acomplex tmp;
+    tmp+=c*a;
+    tmp+=a*c;
+    tmp+=c/a;
+    tmp+=a/c;
+    tmp+=c+a;
+    tmp+=a+c;
+    tmp+=c-a;
+    tmp+=a-c;
+    tmp*=c;
+    tmp/=c;
+    tmp+=c;
+    tmp-=c;
+//END USELESS
+
+
+    acomplex z=acomplex(a2,b2);
     std::complex<double> z1=std::complex<double>(a1,b1);
     z  = op (z);
     z1 = op (z1);

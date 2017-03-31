@@ -7,10 +7,23 @@
 
 #include <math.h>
 #include <stdexcept>
+
+#ifdef CL_TAPE_CPPAD
+#include <map>
+#include <fstream>
+#include <cl/tape/impl/detail/enable_ad.hpp>
+#include <cl/tape/util/testoutput.hpp>
+#include <cl/tape/tape.hpp>
+typedef cl::tdouble AReal;
+#endif
+
+#ifdef USE_ADEPT
 #include "../../Adept/adept.h"
+typedef adept::adouble AReal;
+#endif
 
 typedef double Real;
-typedef adept::adouble AReal;
+
 
 inline Real adtan2(Real y, Real x)
 {
