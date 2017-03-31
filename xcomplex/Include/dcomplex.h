@@ -56,8 +56,6 @@ public:
         return dcomplex((*this).getReal()+cpx.getReal(),(*this).getImm()+cpx.getImm());
     }
 
-
-
     dcomplex operator+=(const dcomplex& cpx)
     const {
         return (*this)+cpx;
@@ -65,9 +63,6 @@ public:
 
     dcomplex operator-(const dcomplex& cpx)
     const {
-
-//        dcomplex outCpc=dcomplex((*this).getReal()-cpx.getReal(),(*this).getImm()-cpx.getImm());
-
         return dcomplex((*this).getReal()-cpx.getReal(),(*this).getImm()-cpx.getImm());;
     }
 
@@ -78,15 +73,8 @@ public:
 
     dcomplex operator*(const dcomplex& cpx)
     const{
-        /*Real r=(*this).getReal()*cpx.getReal()-(*this).getImm()*cpx.getImm();
-        Real i=(*this).getImm()*cpx.getReal()+(*this).getReal()*cpx.getImm();
-        dcomplex outCpx=dcomplex(r,i);*/
-
         return dcomplex((*this).getReal()*cpx.getReal()-(*this).getImm()*cpx.getImm(),(*this).getImm()*cpx.getReal()+(*this).getReal()*cpx.getImm());
     }
-
-
-
 
     dcomplex operator*=(const dcomplex& cpx)
     const{
@@ -97,11 +85,6 @@ public:
 
     dcomplex operator/(const dcomplex& cpx)
     const{
-        /*Real r=((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm());
-        Real i=((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm());
-        Real Rho=cpx.getNormSqr();
-        dcomplex outCpx=dcomplex(r/Rho,i/Rho);*/
-
         return dcomplex(((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm())/cpx.getNormSqr(),((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm())/cpx.getNormSqr());
     }
 
@@ -118,7 +101,6 @@ public:
             os<<obj.getReal()<<" + "<<ImagUnit<<" "<<obj.getImm()<<std::endl;
         else
             os<<obj.getReal()<<" - "<<ImagUnit<<" "<<(tmp1)<<std::endl;
-
         return os;
     }
 ////Double Operators
@@ -134,29 +116,18 @@ public:
 
     dcomplex operator+(const Real& c)
     const{
-        /* Real r=c+(*this).getReal();
-         dcomplex outCpx=dcomplex(r,(*this).getImm());*/
-
         return dcomplex(c+(*this).getReal(),(*this).getImm());
     }
     dcomplex operator-(const Real& c)
     const{
-        /*Real r=(*this).getReal()-c;
-        dcomplex outCpx=dcomplex(r,(*this).getImm());*/
-
         return dcomplex((*this).getReal()-c,(*this).getImm());
     }
     dcomplex operator*(const Real& c)
     const{
-        /* Real r=c*(*this).getReal();
-         Real i=c*(*this).getImm();
-         dcomplex outCpx=dcomplex(c*(*this).getReal(),c*(*this).getImm());*/
-
         return dcomplex(c*(*this).getReal(),c*(*this).getImm());
     }
     dcomplex operator/(const Real& c)
     const{
-//        Real tmp=1./c;
         return (*this)*(1./c);
     }
 
@@ -191,23 +162,6 @@ public:
     acomplex operator*(const acomplex& cpx)const;////ADJ
 
 ////Mathematical Operations
-    dcomplex conj()
-    {
-        Real r=(*this).getReal();
-        Real i=-(*this).getImm();
-        dcomplex outCpx=dcomplex(r,-i);
-
-        return outCpx;
-    }
-
-    friend dcomplex conj(const dcomplex& in)
-    {
-        Real r=(in).getReal();
-        Real i=-(in).getImm();
-        dcomplex outCpx=dcomplex(r,-i);
-
-        return outCpx;
-    }
 
     friend dcomplex pow(const dcomplex& in,const Real& n)
     {
@@ -265,11 +219,6 @@ public:
         dcomplex outCpx=dcomplex(r,i);
 
         return outCpx;
-    }
-
-    dcomplex immUnit()
-    {
-        return (dcomplex(0.0,1.0));
     }
     friend void swap(dcomplex& a, dcomplex& b)
     {

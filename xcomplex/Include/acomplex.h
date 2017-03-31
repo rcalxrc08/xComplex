@@ -60,7 +60,7 @@ public:
     }
 
     inline acomplex operator-(const AReal& arealNum)
-    {
+    const{
         return acomplex((*this).getReal()-arealNum,(*this).getImm());
     }
 
@@ -81,12 +81,12 @@ public:
     }
 
     inline acomplex operator-=(const AReal& arealNum)
-    {
+    const{
         return (*this)-arealNum;
     }
 
     inline acomplex operator*=(const AReal& arealNum)
-    {
+    const{
         return (*this)*arealNum;
     }
 
@@ -102,12 +102,12 @@ public:
     }
 
     inline acomplex operator-(const Real& realNum)
-    {
+    const{
         return acomplex((*this).getReal()-realNum,(*this).getImm());
     }
 
     inline acomplex operator*(const Real& realNum)
-    {
+    const{
         return acomplex((*this).getReal()*realNum,(*this).getImm()*realNum);
     }
 
@@ -122,12 +122,12 @@ public:
     }
 
     inline acomplex operator-=(const Real& realNum)
-    {
+    const{
         return (*this)-realNum;
     }
 
     inline acomplex operator*=(const Real& realNum)
-    {
+    const{
         return (*this)*realNum;
     }
 
@@ -156,7 +156,7 @@ public:
     }
 
     inline acomplex operator-(const acomplex& cpx)
-    {
+    const{
         return acomplex((*this).getReal()-cpx.getReal(),(*this).getImm()-cpx.getImm());;
     }
 
@@ -166,28 +166,28 @@ public:
     }
 
     inline acomplex operator/(const acomplex& cpx)
-    {
+    const{
         return acomplex(((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm())/cpx.getNormSqr(),((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm())/cpx.getNormSqr());
     }
 
     ////op=
     inline acomplex operator+=(const acomplex& cpx)
-    {
+    const{
         return (*this)+cpx;
     }
 
     inline acomplex operator-=(const acomplex& cpx)
-    {
+    const{
         return (*this)-cpx;
     }
 
     inline acomplex operator*=(const acomplex& cpx)
-    {
+    const{
         return (*this)*cpx;
     }
 
     inline acomplex operator/=(const acomplex& cpx)
-    {
+    const{
         return (*this)/cpx;
     }
 
