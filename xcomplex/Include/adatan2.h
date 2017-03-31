@@ -15,11 +15,15 @@
 #include <cl/tape/util/testoutput.hpp>
 #include <cl/tape/tape.hpp>
 typedef cl::tdouble AReal;
+#define LVAL (Real)
+#define RVAL
 #endif
 
 #ifdef USE_ADEPT
 #include "../../Adept/adept.h"
 typedef adept::adouble AReal;
+#define LVAL
+#define RVAL .value()
 #endif
 
 typedef double Real;
@@ -38,11 +42,11 @@ inline Real adtan2(Real y, Real x)
     }
     return out;
 }
-inline AReal adtan2(AReal y, AReal x)
+inline AReal atan2(AReal y, AReal x)
 {
     AReal  out=0.0;
-    Real xval=x.value();
-    Real yval=y.value();
+    Real xval=LVAL x RVAL;
+    Real yval=LVAL x RVAL;
     if(xval<0.0&&yval==0.0)
         out=(Real)M_PI;
     else if(xval==0.0&&yval==0.0)

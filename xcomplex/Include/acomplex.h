@@ -26,9 +26,9 @@ public:
 
     AReal getImm() const {return im;}
 
-    AReal getRho() const {return sqrt(re*re+im*im);}
+    AReal getRho() const {using namespace std; return sqrt(re*re+im*im);}
 
-    AReal getTheta() const {return adtan2(im,re);}
+    AReal getTheta() const {using namespace std; return atan2(im, re);}
 
     AReal getNormSqr() const {return re*re+im*im;}
 
@@ -206,36 +206,43 @@ public:
 
     friend acomplex pow(const acomplex& in,const AReal& n)
     {
+        using namespace std;
         return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
     }
 
-    friend acomplex pow(const acomplex& in,Real n)
+    friend acomplex pow(const acomplex& in,const Real& n)
     {
+        using namespace std;
         return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
     }
 
     friend acomplex exp(const acomplex& in)
     {
+        using namespace std;
         return acomplex(exp(in.getReal())*cos(in.getImm()),exp(in.getReal())*sin(in.getImm()));
     }
 
     friend acomplex cos(const acomplex& in)
     {
+        using namespace std;
         return acomplex(cosh((in).getImm())*cos((in).getReal()),-1.*sin((in).getReal())*sinh((in).getImm()));
     }
 
     friend acomplex sin(const acomplex& in)
     {
+        using namespace std;
         return acomplex(sin((in).getReal())*cosh((in).getImm()),cos((in).getReal())*sinh((in).getImm()));
     }
 
     friend acomplex tan(const acomplex& in)
     {
+        using namespace std;
         return sin(in)/cos(in);
     }
 
     friend acomplex log(const acomplex& in)
     {
+        using namespace std;
         return acomplex(log(in.getRho()),in.getTheta());
     }
     friend void swap(acomplex& a, acomplex& b)
