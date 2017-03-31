@@ -44,9 +44,10 @@ inline Real adtan2(Real y, Real x)
 }
 inline AReal atan2(AReal y, AReal x)
 {
+    using namespace std;
     AReal  out=0.0;
     Real xval=LVAL x RVAL;
-    Real yval=LVAL x RVAL;
+    Real yval=LVAL y RVAL;
     if(xval<0.0&&yval==0.0)
         out=(Real)M_PI;
     else if(xval==0.0&&yval==0.0)
