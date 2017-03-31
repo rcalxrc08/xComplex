@@ -1,7 +1,4 @@
-#include <cassert>
-//#include "acomplex.h"
 #include "../xcomplex/Include/acomplex.h"
-#include "../Adept/adept.h"
 #include "gtest/gtest.h"
 #include <complex>
 #define op operazione
@@ -12,26 +9,26 @@ TEST(AComplexDerivative, log)
 {
 #undef op
 #define op(N1) log(N1)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     EXPECT_NEAR(FDDer, ADDer,DerToll);
     if (HasFailure())
     {
@@ -44,27 +41,27 @@ TEST(AComplexDerivative, sin)
 {
 #undef op
 #define op(N1) sin(N1)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     EXPECT_NEAR(FDDer, ADDer,DerToll);
     if (HasFailure())
     {
@@ -77,27 +74,27 @@ TEST(AComplexDerivative, cos)
 {
 #undef op
 #define op(N1) cos(N1)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     EXPECT_NEAR(FDDer, ADDer,DerToll);
     if (HasFailure())
     {
@@ -110,27 +107,27 @@ TEST(AComplexDerivative, tan)
 {
 #undef op
 #define op(N1) tan(N1)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     EXPECT_NEAR(FDDer, ADDer,DerToll);
     if (HasFailure())
     {
@@ -142,27 +139,27 @@ TEST(AComplexDerivative, exp)
 {
 #undef op
 #define op(N1) exp(N1)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     EXPECT_NEAR(FDDer, ADDer,DerToll);
     if (HasFailure())
     {
@@ -175,27 +172,27 @@ TEST(AComplexDerivative, mixed1)
 {
 #undef op
 #define op(N1) exp(sin(log(cos(N1))))
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
 
     z  =op(z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     /*std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
     std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;*/
     EXPECT_NEAR(FDDer, ADDer,DerToll);
@@ -210,26 +207,26 @@ TEST(AComplexDerivative, mixed2)
 {
 #undef op
 #define op(N1) exp(sin(sin(sin(N1))))
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     /*std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
     std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;*/
     EXPECT_NEAR(FDDer, ADDer,DerToll);
@@ -244,27 +241,27 @@ TEST(AComplexDerivative, mixed3)
 {
 #undef op
 #define op(N1) cos(tan(exp(sin(cos(log(N1))))))
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     /*std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
     std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;*/
     EXPECT_NEAR(FDDer, ADDer,DerToll);
@@ -280,27 +277,27 @@ TEST(AComplexDerivative, mixed4)
 #undef op
 //#define op(N1) (cos(tan(exp(sin(cos(log(N1))))))+N1*cos(N1))
 #define op(N1) exp(N1)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
-    double dx=toll1;
-    auto Dx=std::complex<double>(dx,0.0);
-    double yDy=op (z1+Dx).real();
-    double y=op (z1).real();
-    double FDDer=(yDy-y)/dx;
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    Real dx=toll1;
+    auto Dx=std::complex<Real>(dx,0.0);
+    Real yDy=op (z1+Dx).real();
+    Real y=op (z1).real();
+    Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    Real ADDer=a.get_gradient();
+    Real DerToll=toll1*1000;
     /*std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
     std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;*/
     EXPECT_NEAR(FDDer, ADDer,DerToll);

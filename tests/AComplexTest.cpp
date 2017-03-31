@@ -1,6 +1,5 @@
-#include <cassert>
+//#include <cassert>
 #include "../xcomplex/Include/acomplex.h"
-#include "../Adept/adept.h"
 #include "gtest/gtest.h"
 #include <complex>
 #define op operazione
@@ -10,17 +9,17 @@ TEST(AComplex, plusScalar)
 {
 #undef op
 #define op +
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
-    double cc= (double)rand() / RAND_MAX;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
+    Real cc= (Real)rand() / RAND_MAX;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
     z.getReal().set_gradient(1.0);
@@ -38,17 +37,17 @@ TEST(AComplex, minusScalar)
 {
 #undef op
 #define op -
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
-    double cc= (double)rand() / RAND_MAX;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
+    Real cc= (Real)rand() / RAND_MAX;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
     z.getReal().set_gradient(1.0);
@@ -66,17 +65,17 @@ TEST(AComplex, multiplyScalar)
 {
 #undef op
 #define op *
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
-    double cc= (double)rand() / RAND_MAX;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
+    Real cc= (Real)rand() / RAND_MAX;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
     z.getReal().set_gradient(1.0);
@@ -93,24 +92,24 @@ TEST(AComplex, divideScalar)
 {
 #undef op
 #define op /
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
-    double cc= (double)rand() / RAND_MAX;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
+    Real cc= (Real)rand() / RAND_MAX;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
     z.getReal().set_gradient(1.0);
     s1.reverse();
     /*EXPECT_EQ(z1.real(), z.getReal().value());
     EXPECT_EQ(z1.imag(), z.getImm().value());*/
-    double toll=1e-14;
+    Real toll=1e-14;
     EXPECT_NEAR(z1.real(), z.getReal().value(),toll);
     EXPECT_NEAR(z1.imag(), z.getImm().value(),toll);
     if (HasFailure())
@@ -126,16 +125,16 @@ TEST(AComplex, plus)
 {
 #undef op
 #define op +
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op z;
     z1 =z1 op z1;
     z.getReal().set_gradient(1.0);
@@ -153,16 +152,16 @@ TEST(AComplex, multiplication)
 {
 #undef op
 #define op *
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z =z op z;
     z1=z1 op z1;
     z.getReal().set_gradient(1.0);
@@ -180,16 +179,16 @@ TEST(AComplex, divide)
 {
 #undef op
 #define op /
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op z;
     z1 =z1 op z1;
     z.getReal().set_gradient(1.0);
@@ -209,16 +208,16 @@ TEST(AComplex, sin)
 {
 #undef op
 #define op sin
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
@@ -235,16 +234,16 @@ TEST(AComplex, cos)
 {
 #undef op
 #define op cos
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
@@ -261,16 +260,16 @@ TEST(AComplex, tan)
 {
 #undef op
 #define op(N) tan(N)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
@@ -288,16 +287,16 @@ TEST(AComplex, exp)
 {
 #undef op
 #define op exp
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a=aa;
-    adept::adouble b=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
     acomplex z=acomplex(a,b);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
@@ -315,19 +314,19 @@ TEST(AComplex, MixedTest)
 {
 #undef op
 #define op(x) exp(cos(x))*x+x*sin(x)
-    double aa= (double)rand() / RAND_MAX;
-    double bb= (double)rand() / RAND_MAX;
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
     adept::Stack s1;
-    adept::adouble a2=aa;
-    adept::adouble b2=bb;
-    double a1=aa;
-    double b1=bb;
+    AReal a2=aa;
+    AReal b2=bb;
+    Real a1=aa;
+    Real b1=bb;
     s1.new_recording();
 
 
     //USELESS, check if it compiles
-    adept::adouble a=1.0;
-    adept::adouble b=1.0;
+    AReal a=1.0;
+    AReal b=1.0;
     acomplex X=acomplex(a,b);
     dcomplex c=dcomplex(1.0,0.0);
     c+=4;
@@ -415,7 +414,7 @@ TEST(AComplex, MixedTest)
 
 
     acomplex z=acomplex(a2,b2);
-    std::complex<double> z1=std::complex<double>(a1,b1);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
