@@ -8,6 +8,7 @@
 #include <math.h>
 #include <stdexcept>
 
+////TAPESCRIPT LIBRARY
 #ifdef CL_TAPE_CPPAD
 #include <map>
 #include <fstream>
@@ -19,6 +20,7 @@ typedef cl::tdouble AReal;
 #define RVAL
 #endif
 
+////ADEPT LIBRARY
 #ifdef USE_ADEPT
 #include "../../Adept/adept.h"
 typedef adept::adouble AReal;
