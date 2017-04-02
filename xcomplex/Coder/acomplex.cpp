@@ -43,11 +43,13 @@ acomplex acomplex::operator*=(const dcomplex& cpx)
 
 acomplex acomplex::operator/(const dcomplex& cpx)
 {
-    dcomplex tmp=dcomplex(1.0,0.0);
-    tmp=tmp/cpx;
+   /* dcomplex tmp=dcomplex(1.0,0.0);
+    tmp=tmp/cpx;*/
 
-    return (*this)*tmp;
+//    return (*this)*tmp;
+    return acomplex(((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm())/cpx.getNormSqr(),((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm())/cpx.getNormSqr());
 }
+
 acomplex acomplex::operator/=(const dcomplex& cpx)
 {
     return (*this)/cpx;

@@ -15,6 +15,11 @@
 #include <cl/tape/impl/detail/enable_ad.hpp>
 #include <cl/tape/util/testoutput.hpp>
 #include <cl/tape/tape.hpp>
+#define STARTAD double xnameimpossible=0
+#define STARTREC(in)  cl::tape_start(in)
+#define SETGRAD(in,out) cl::tfunc<double> f(in, out)
+#define GETGRAD(in,i) (f.reverse(1, std::vector<double> (1, 1.0)))[i]
+#define GETGRADS(in,i) (f.reverse(1, std::vector<double> (1, 1.0)))
 typedef cl::tdouble AReal;
 #define LVAL (Real)
 #define RVAL
@@ -22,7 +27,12 @@ typedef cl::tdouble AReal;
 
 ////ADEPT LIBRARY
 #ifdef USE_ADEPT
-#include "../../Adept/adept.h"
+#include "adept.h"
+#define STARTAD adept::Stack s1
+#define STARTREC(in) s1.new_recording()
+#define SETGRAD(in,out) out[0].set_gradient(1.0);s1.reverse()
+#define GETGRAD(in,i) (in[i].get_gradient())
+#define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
 typedef adept::adouble AReal;
 #define LVAL
 #define RVAL .value()
@@ -31,6 +41,14 @@ typedef adept::adouble AReal;
 ////ADEPT 2.0 LIBRARY
 #ifdef USE_ADEPT2
 #include "adept.h"
+#include "adept/Stack.h"
+#include "adept/scalar_shortcuts.h"
+//#include "adept_source.h"
+#define STARTAD adept::Stack s1
+#define STARTREC(in) s1.new_recording()
+#define SETGRAD(in,out) out[0].set_gradient(1.0);s1.reverse()
+#define GETGRAD(in,i) (in[i].get_gradient())
+#define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
 typedef adept::adouble AReal;
 #define LVAL
 #define RVAL .value()

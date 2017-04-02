@@ -8,7 +8,7 @@ add_subdirectory(gtests)
 
 find_package(Threads REQUIRED)
 enable_testing()
-include_directories(${GTEST_SOURCE_DIR} ${GMOCK_SOURCE_DIR})
+include_directories(${GTEST_SOURCE_DIR} ${GMOCK_SOURCE_DIR} Adept)
 
 file(GLOB SOURCES "xcomplex/Coder/*.cpp" "xcomplex/Include/*.h" "Adept/*.h" "Adept/*.cpp")
 file(GLOB TEST_SOURCES "tests/*.cpp")

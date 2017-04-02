@@ -27,65 +27,65 @@ acomplex operator/(const AReal& c,const dcomplex& in)
 
 acomplex dcomplex::operator+(const acomplex& cpx)
 const{
-    AReal r= (*this).getReal()+ cpx.getReal();
-    AReal i= (*this).getImm()+ cpx.getImm();
-    acomplex outCpc=acomplex(r,i);
+    /*AReal r= (*this).getReal()+ cpx.getReal();
+    AReal i= (*this).getImm()+ cpx.getImm();*/
+//    acomplex outCpc=acomplex((*this).getReal()+ cpx.getReal(),(*this).getImm()+ cpx.getImm());
 
-    return outCpc;
+    return acomplex((*this).getReal()+ cpx.getReal(),(*this).getImm()+ cpx.getImm());
 }
 acomplex dcomplex::operator-(const acomplex& cpx)
 const{
-    AReal r= (*this).getReal()- cpx.getReal();
-    AReal i= (*this).getImm()- cpx.getImm();
-    acomplex outCpc=acomplex(r,i);
+    /* AReal r= (*this).getReal()- cpx.getReal();
+     AReal i= (*this).getImm()- cpx.getImm();*/
+//    acomplex outCpc=acomplex((*this).getReal()- cpx.getReal(), (*this).getImm()- cpx.getImm());
 
-    return outCpc;
+    return acomplex((*this).getReal()- cpx.getReal(), (*this).getImm()- cpx.getImm());
 }
 acomplex dcomplex::operator*(const acomplex& cpx)
 const{
-    AReal r= (*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm();
-    AReal i= (*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm();
-    acomplex outCpx=acomplex(r,i);
+    /*  AReal r= (*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm();
+      AReal i= (*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm();
+      acomplex outCpx=acomplex((*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm(),(*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm());*/
 
-    return outCpx;
+    return acomplex((*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm(),(*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm());
 }
 acomplex dcomplex::operator/(const acomplex& cpx)
 const{
-    AReal r= (*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm();
-    AReal i= (*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm();
-    AReal Rho=cpx.getNormSqr();
-    acomplex outCpx=acomplex(r/Rho,i/Rho);
+    /*AReal r= ((*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm());
+    AReal i= ((*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm());
+    AReal Rho=cpx.getNormSqr();*/
+//    acomplex outCpx=acomplex( ((*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm())/cpx.getNormSqr(),((*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm())/cpx.getNormSqr());
 
-    return outCpx;
+    return acomplex( ((*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm())/cpx.getNormSqr(),((*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm())/cpx.getNormSqr());
 }
 ////Adouble
 acomplex dcomplex::operator+(const AReal& c)
 const{
-    AReal r= (*this).getReal()+c;
+    /*AReal r= (*this).getReal()+c;
     AReal i= (*this).getImm();
-    acomplex outCpx=acomplex(r,i);
+    acomplex outCpx=acomplex( (*this).getReal()+c,(*this).getImm());*/
 
-    return outCpx;
+    return acomplex( (*this).getReal()+c,(*this).getImm());
 }
 acomplex dcomplex::operator-(const AReal& c)
 const{
-    AReal r= (*this).getReal()-c;
-    AReal i= (*this).getImm();
-    acomplex outCpx=acomplex(r,i);
+/*    AReal r= (*this).getReal()-c;
+    AReal i= (*this).getImm();*/
+//    acomplex outCpx=acomplex((*this).getReal()-c,(*this).getImm());
 
-    return outCpx;
+    return acomplex((*this).getReal()-c,(*this).getImm());
 }
 acomplex dcomplex::operator*(const AReal& c)
 const{
-    AReal r= (*this).getReal()*c;
+    /*AReal r= (*this).getReal()*c;
     AReal i= (*this).getImm()*c;
-    acomplex outCpx=acomplex(r,i);
+    acomplex outCpx=acomplex((*this).getReal()*c,(*this).getImm()*c);*/
 
-    return outCpx;
+    return acomplex((*this).getReal()*c,(*this).getImm()*c);
 }
 acomplex dcomplex::operator/(const AReal& c)
 const{
-    AReal tm=1./c;
-    acomplex outCpx=(*this)*tm;
-    return outCpx;
+/*    AReal tm=1./c;
+    acomplex outCpx=(*this)*tm;*/
+    return acomplex((*this).getReal()/c,(*this).getImm()/c);
 }
