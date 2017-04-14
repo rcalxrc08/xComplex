@@ -9,6 +9,7 @@
 ////Include
 #include <cmath>
 #include <vector>
+#include <iostream>
 #include "adatan2.h"
 #include "acomplex.h"
 

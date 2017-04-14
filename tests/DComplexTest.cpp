@@ -71,8 +71,6 @@ TEST(DComplex, log)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x);
 	x1=op (x1);
-	/*EXPECT_EQ(x1.real(), x.getReal());
-    EXPECT_EQ(x1.imag(), x.getImm());*/
 	double toll=1e-14;
 	EXPECT_NEAR(x1.real(), x.getReal(),toll);
 	EXPECT_NEAR(x1.imag(), x.getImm(),toll);

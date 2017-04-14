@@ -12,6 +12,10 @@
 //// All is passed by reference
 class dcomplex;
 
+#ifdef USE_ADDICT
+using namespace ad;
+#endif
+
 class acomplex
 {
 private:
@@ -36,10 +40,12 @@ public:
     {
         AReal tmpIM=(-1.0*obj.getImm());
         Real tmp1=LVAL tmpIM RVAL;
+        Real re=LVAL obj.getReal() RVAL;
+        Real im=LVAL obj.getImm() RVAL;
         if(obj.getImm()>=0.0)
-            os<<obj.getReal()<<" + "<<ImagUnit<<" "<<obj.getImm();
+            os<<re<<" + "<<ImagUnit<<" "<<im;
         else
-            os<<obj.getReal()<<" - "<<ImagUnit<<" "<<(tmp1);
+            os<<re<<" - "<<ImagUnit<<" "<<(tmp1);
 
         return os;
     }
@@ -208,7 +214,7 @@ public:
     friend acomplex pow(const acomplex& in,const AReal& n)
     {
         using namespace std;
-        return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
+        return acomplex(cos(n*in.getTheta())*pow(in.getRho(),LVAL n RVAL),sin(n*in.getTheta())*pow(in.getRho(),LVAL n RVAL));
     }
 
     friend acomplex pow(const acomplex& in,const Real& n)
@@ -232,7 +238,7 @@ public:
     friend acomplex sin(const acomplex& in)
     {
         using namespace std;
-        return acomplex(sin((in).getReal())*cosh((in).getImm()),cos((in).getReal())*sinh((in).getImm()));
+        return acomplex(sin(in.getReal())*cosh(in.getImm()),cos((in).getReal())*sinh((in).getImm()));
     }
 
     friend acomplex tan(const acomplex& in)

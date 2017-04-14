@@ -24,14 +24,27 @@ typedef cl::tdouble AReal;
 #define LVAL (Real)
 #define RVAL
 #endif
+#ifdef USE_ADDICT
+#include "ad.h"
+using namespace ad;
+typedef areal AReal;
+#define STARTAD  ADGraph adGraph
+#define STARTREC(in) auto pxoiem1=1
+#define SETGRAD(in,out)  SetAdjoint(out, 1.0);PropagateAdjoint();
+#define GETGRAD(in) GetAdjoint(in)
+#define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
+#define LVAL
+#define RVAL .val
+#endif
+
 
 ////ADEPT LIBRARY
 #ifdef USE_ADEPT
 #include "adept.h"
 #define STARTAD adept::Stack s1
 #define STARTREC(in) s1.new_recording()
-#define SETGRAD(in,out) out[0].set_gradient(1.0);s1.reverse()
-#define GETGRAD(in,i) (in[i].get_gradient())
+#define SETGRAD(in,out) out.set_gradient(1.0);s1.reverse()
+#define GETGRAD(in) (in.get_gradient())
 #define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
 typedef adept::adouble AReal;
 #define LVAL

@@ -11,21 +11,21 @@ TEST(AComplex, plusScalar)
 #define op +
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
     Real cc= (Real)rand() / RAND_MAX;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -39,21 +39,21 @@ TEST(AComplex, minusScalar)
 #define op -
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
     Real cc= (Real)rand() / RAND_MAX;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -67,21 +67,21 @@ TEST(AComplex, multiplyScalar)
 #define op *
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
     Real cc= (Real)rand() / RAND_MAX;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -94,24 +94,24 @@ TEST(AComplex, divideScalar)
 #define op /
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
     Real cc= (Real)rand() / RAND_MAX;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    /*EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());*/
+    SETGRAD(a,z.getReal());
+
+    /*EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);*/
     Real toll=1e-14;
-    EXPECT_NEAR(z1.real(), z.getReal().value(),toll);
-    EXPECT_NEAR(z1.imag(), z.getImm().value(),toll);
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll);
+    EXPECT_NEAR(z1.imag(), LVAL z.getImm() RVAL,toll);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -127,20 +127,20 @@ TEST(AComplex, plus)
 #define op +
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op z;
     z1 =z1 op z1;
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -154,20 +154,20 @@ TEST(AComplex, multiplication)
 #define op *
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z =z op z;
     z1=z1 op z1;
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -181,20 +181,20 @@ TEST(AComplex, divide)
 #define op /
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op z;
     z1 =z1 op z1;
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -210,20 +210,20 @@ TEST(AComplex, sin)
 #define op sin
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -236,20 +236,20 @@ TEST(AComplex, cos)
 #define op cos
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -262,21 +262,21 @@ TEST(AComplex, tan)
 #define op(N) tan(N)
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
+    SETGRAD(a,z.getReal());
+
     auto toll=1e-14;
-    EXPECT_NEAR(z1.real(), z.getReal().value(),toll);
-    EXPECT_NEAR(z1.imag(), z.getImm().value(),toll);
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll);
+    EXPECT_NEAR(z1.imag(), LVAL z.getImm() RVAL,toll);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -289,20 +289,20 @@ TEST(AComplex, exp)
 #define op exp
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a=aa;
     AReal b=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
     acomplex z=acomplex(a,b);
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), z.getImm()RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -316,12 +316,12 @@ TEST(AComplex, MixedTest)
 #define op(x) exp(cos(x))*x+x*sin(x)
     Real aa= (Real)rand() / RAND_MAX;
     Real bb= (Real)rand() / RAND_MAX;
-    adept::Stack s1;
+    STARTAD;
     AReal a2=aa;
     AReal b2=bb;
     Real a1=aa;
     Real b1=bb;
-    s1.new_recording();
+    STARTREC();
 
 
     //USELESS, check if it compiles
@@ -417,10 +417,10 @@ TEST(AComplex, MixedTest)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    z.getReal().set_gradient(1.0);
-    s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    SETGRAD(a,z.getReal());
+
+    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
+    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
