@@ -10,6 +10,7 @@
 
 ////TAPESCRIPT LIBRARY
 #ifdef CL_TAPE_CPPAD
+#define NAMELIB "Using Tapescript Library"
 #include <map>
 #include <fstream>
 #include <cl/tape/impl/detail/enable_ad.hpp>
@@ -26,6 +27,7 @@ typedef cl::tdouble AReal;
 #endif
 #ifdef USE_ADDICT
 #include "ad.h"
+#define NAMELIB "Using Addict Library"
 using namespace ad;
 typedef areal AReal;
 #define STARTAD  ADGraph adGraph
@@ -40,6 +42,7 @@ typedef areal AReal;
 
 ////ADEPT LIBRARY
 #ifdef USE_ADEPT
+#define NAMELIB "Using Adept 1.0 Library"
 #include "adept.h"
 #define STARTAD adept::Stack s1
 #define STARTREC(in) s1.new_recording()
@@ -53,6 +56,7 @@ typedef adept::adouble AReal;
 
 ////ADEPT 2.0 LIBRARY
 #ifdef USE_ADEPT2
+#define NAMELIB "Using Adept 2.0 Library"
 #include "adept.h"
 #include "adept/Stack.h"
 #include "adept/scalar_shortcuts.h"
