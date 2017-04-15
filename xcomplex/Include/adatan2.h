@@ -31,7 +31,7 @@ typedef cl::tdouble AReal;
 using namespace ad;
 typedef areal AReal;
 #define STARTAD  ADGraph adGraph
-#define STARTREC(in) auto pxoiem1=1
+#define STARTREC(in) auto pxoieMJbGFUm1=1
 #define SETGRAD(in,out)  SetAdjoint(out, 1.0);PropagateAdjoint();
 #define GETGRAD(in) GetAdjoint(in)
 #define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
