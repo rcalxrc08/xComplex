@@ -1,13 +1,9 @@
-#include "../xcomplex/Include/adatan2.h"
 #include "gtest/gtest.h"
 #include "../xcomplex/Include/acomplex.h"
 #include <complex>
 #define op operazione
 #define Nprint 20
 #define toll1 1E-9
-#ifdef USE_ADDICT
-DECLARE_ADGRAPH();
-#endif
 TEST(AComplexDerivative, log)
 {
 #undef op

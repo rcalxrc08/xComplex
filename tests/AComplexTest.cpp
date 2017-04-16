@@ -1,4 +1,3 @@
-//#include <cassert>
 #include "../xcomplex/Include/acomplex.h"
 #include "gtest/gtest.h"
 #include <complex>

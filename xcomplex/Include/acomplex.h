@@ -22,7 +22,7 @@ private:
     AReal re;
     AReal im;
 public:
-    explicit acomplex () :re(),im(){}
+    explicit acomplex () {}
     explicit acomplex (const AReal& RealP,const AReal& im) :re(RealP),im(im){}
 
 ////IntraClass Operators
@@ -52,7 +52,7 @@ public:
 ////InterClass Operators
     bool operator==(acomplex& o)
     {
-        return ((*this).getImm()==o.getImm()&&(*this).getReal()==o.getReal());
+        return (im==o.getImm()&&re==o.getReal());
     }
 
     bool operator!=(acomplex& o)
@@ -63,22 +63,22 @@ public:
 ////acomplex op AReal
     inline acomplex operator+(const AReal& arealNum) //Adouble SUM
     const {
-        return acomplex((*this).getReal()+arealNum,(*this).getImm());
+        return acomplex(re+arealNum,im);
     }
 
     inline acomplex operator-(const AReal& arealNum)
     const{
-        return acomplex((*this).getReal()-arealNum,(*this).getImm());
+        return acomplex(re-arealNum,im);
     }
 
     inline acomplex operator*(const AReal& arealNum)
     const{
-        return acomplex((*this).getReal()*arealNum,(*this).getImm()*arealNum);
+        return acomplex(re*arealNum,im*arealNum);
     }
 
     inline acomplex operator/(const AReal& arealNum)
     const{
-        return acomplex((*this).getReal()/arealNum,(*this).getImm()/arealNum);
+        return acomplex(re/arealNum,im/arealNum);
     }
 
     ////op=
@@ -105,22 +105,22 @@ public:
     ////Acomplex op Real
     inline acomplex operator+(const Real& realNum) //Double SUM
     const {
-        return acomplex((*this).getReal()+realNum,(*this).getImm());
+        return acomplex(re+realNum,im);
     }
 
     inline acomplex operator-(const Real& realNum)
     const{
-        return acomplex((*this).getReal()-realNum,(*this).getImm());
+        return acomplex(re-realNum,im);
     }
 
     inline acomplex operator*(const Real& realNum)
     const{
-        return acomplex((*this).getReal()*realNum,(*this).getImm()*realNum);
+        return acomplex(re*realNum,im*realNum);
     }
 
     inline acomplex operator/(const Real& realNum)
     const{
-        return acomplex((*this).getReal()/realNum,(*this).getImm()/realNum);
+        return acomplex(re/realNum,im/realNum);
     }
     ////op=
     inline acomplex operator+=(const Real& realNum) //Double SUM
@@ -159,22 +159,22 @@ public:
     ////Acomplex op Acomplex
     inline acomplex operator+(const acomplex& cpx) //Acomplex SUM
     const{
-        return acomplex((*this).getReal() + cpx.getReal(),(*this).getImm() + cpx.getImm());
+        return acomplex(re + cpx.getReal(),im + cpx.getImm());
     }
 
     inline acomplex operator-(const acomplex& cpx)
     const{
-        return acomplex((*this).getReal()-cpx.getReal(),(*this).getImm()-cpx.getImm());;
+        return acomplex(re-cpx.getReal(),im-cpx.getImm());;
     }
 
     inline acomplex operator*(const acomplex& cpx)
     const{
-        return acomplex((*this).getReal()*cpx.getReal()-(*this).getImm()*cpx.getImm(),(*this).getImm()*cpx.getReal()+(*this).getReal()*cpx.getImm());
+        return acomplex(re*cpx.getReal()-im*cpx.getImm(),im*cpx.getReal()+re*cpx.getImm());
     }
 
     inline acomplex operator/(const acomplex& cpx)
     const{
-        return acomplex(((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm())/cpx.getNormSqr(),((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm())/cpx.getNormSqr());
+        return acomplex((re*cpx.getReal()+im*cpx.getImm())/cpx.getNormSqr(),(im*cpx.getReal()-re*cpx.getImm())/cpx.getNormSqr());
     }
 
     ////op=
@@ -243,6 +243,7 @@ public:
 
     friend acomplex tan(const acomplex& in)
     {
+        //TODO Optimize function tangent for acomplex
         using namespace std;
         return sin(in)/cos(in);
     }

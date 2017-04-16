@@ -4,6 +4,12 @@
 
 
 #include "../Include/acomplex.h"
+#ifdef USE_ADEPT
+#include "adept_source.h"
+#endif
+#ifdef USE_ADDICT
+DECLARE_ADGRAPH();
+#endif
 acomplex acomplex::operator+(const dcomplex& cpx)
 {
     /*AReal r=(*this).getReal()+cpx.getReal();
