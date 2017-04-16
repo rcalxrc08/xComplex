@@ -10,6 +10,7 @@
 
 ////TAPESCRIPT LIBRARY
 #ifdef CL_TAPE_CPPAD
+using namespace std;
 #define NAMELIB "Using Tapescript Library"
 #include <map>
 #include <fstream>
@@ -88,7 +89,6 @@ inline Real adtan2(Real y, Real x)
 }
 inline AReal atan2(AReal y, AReal x)
 {
-    using namespace std;
     AReal  out=0.0;
     Real xval=LVAL x RVAL;
     Real yval=LVAL y RVAL;
