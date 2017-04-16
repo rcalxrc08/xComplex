@@ -22,7 +22,7 @@ using namespace ad;
 
 class acomplex
 {
-private:
+public:////Attributse
     AReal re;
     AReal im;
 public:

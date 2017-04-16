@@ -25,65 +25,65 @@ acomplex operator/(const AReal& c,const dcomplex& cpx)
 
 acomplex dcomplex::operator+(const acomplex& cpx)
 const{
-    /*AReal r= (*this).getReal()+ cpx.getReal();
-    AReal i= (*this).getImm()+ cpx.getImm();*/
-//    acomplex outCpc=acomplex((*this).getReal()+ cpx.getReal(),(*this).getImm()+ cpx.getImm());
+    /*AReal r= (*this).re+ cpx.re;
+    AReal i= (*this).im+ cpx.im;*/
+//    acomplex outCpc=acomplex((*this).re+ cpx.re,(*this).im+ cpx.im);
 
-    return acomplex((*this).getReal()+ cpx.getReal(),(*this).getImm()+ cpx.getImm());
+    return acomplex((*this).re+ cpx.re,(*this).im+ cpx.im);
 }
 acomplex dcomplex::operator-(const acomplex& cpx)
 const{
-    /* AReal r= (*this).getReal()- cpx.getReal();
-     AReal i= (*this).getImm()- cpx.getImm();*/
-//    acomplex outCpc=acomplex((*this).getReal()- cpx.getReal(), (*this).getImm()- cpx.getImm());
+    /* AReal r= (*this).re- cpx.re;
+     AReal i= (*this).im- cpx.im;*/
+//    acomplex outCpc=acomplex((*this).re- cpx.re, (*this).im- cpx.im);
 
-    return acomplex((*this).getReal()- cpx.getReal(), (*this).getImm()- cpx.getImm());
+    return acomplex((*this).re- cpx.re, (*this).im- cpx.im);
 }
 acomplex dcomplex::operator*(const acomplex& cpx)
 const{
-    /*  AReal r= (*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm();
-      AReal i= (*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm();
-      acomplex outCpx=acomplex((*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm(),(*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm());*/
+    /*  AReal r= (*this).re* cpx.re- (*this).im* cpx.im;
+      AReal i= (*this).im* cpx.re+ (*this).re* cpx.im;
+      acomplex outCpx=acomplex((*this).re* cpx.re- (*this).im* cpx.im,(*this).im* cpx.re+ (*this).re* cpx.im);*/
 
-    return acomplex((*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm(),(*this).getImm()* cpx.getReal()+ (*this).getReal()* cpx.getImm());
+    return acomplex((*this).re* cpx.re- (*this).im* cpx.im,(*this).im* cpx.re+ (*this).re* cpx.im);
 }
 acomplex dcomplex::operator/(const acomplex& cpx)
 const{
-    /*AReal r= ((*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm());
-    AReal i= ((*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm());
+    /*AReal r= ((*this).re* cpx.re+ (*this).im* cpx.im);
+    AReal i= ((*this).im* cpx.re- (*this).re* cpx.im);
     AReal Rho=cpx.getNormSqr();*/
-//    acomplex outCpx=acomplex( ((*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm())/cpx.getNormSqr(),((*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm())/cpx.getNormSqr());
+//    acomplex outCpx=acomplex( ((*this).re* cpx.re+ (*this).im* cpx.im)/cpx.getNormSqr(),((*this).im* cpx.re- (*this).re* cpx.im)/cpx.getNormSqr());
 
-    return acomplex( ((*this).getReal()* cpx.getReal()+ (*this).getImm()* cpx.getImm())/cpx.getNormSqr(),((*this).getImm()* cpx.getReal()- (*this).getReal()* cpx.getImm())/cpx.getNormSqr());
+    return acomplex( ((*this).re* cpx.re+ (*this).im* cpx.im)/cpx.getNormSqr(),((*this).im* cpx.re- (*this).re* cpx.im)/cpx.getNormSqr());
 }
 ////Adouble
 acomplex dcomplex::operator+(const AReal& c)
 const{
-    /*AReal r= (*this).getReal()+c;
-    AReal i= (*this).getImm();
-    acomplex outCpx=acomplex( (*this).getReal()+c,(*this).getImm());*/
+    /*AReal r= (*this).re+c;
+    AReal i= (*this).im;
+    acomplex outCpx=acomplex( (*this).re+c,(*this).im);*/
 
-    return acomplex( (*this).getReal()+c,(*this).getImm());
+    return acomplex( (*this).re+c,(*this).im);
 }
 acomplex dcomplex::operator-(const AReal& c)
 const{
-/*    AReal r= (*this).getReal()-c;
-    AReal i= (*this).getImm();*/
-//    acomplex outCpx=acomplex((*this).getReal()-c,(*this).getImm());
+/*    AReal r= (*this).re-c;
+    AReal i= (*this).im;*/
+//    acomplex outCpx=acomplex((*this).re-c,(*this).im);
 
-    return acomplex((*this).getReal()-c,(*this).getImm());
+    return acomplex((*this).re-c,(*this).im);
 }
 acomplex dcomplex::operator*(const AReal& c)
 const{
-    /*AReal r= (*this).getReal()*c;
-    AReal i= (*this).getImm()*c;
-    acomplex outCpx=acomplex((*this).getReal()*c,(*this).getImm()*c);*/
+    /*AReal r= (*this).re*c;
+    AReal i= (*this).im*c;
+    acomplex outCpx=acomplex((*this).re*c,(*this).im*c);*/
 
-    return acomplex((*this).getReal()*c,(*this).getImm()*c);
+    return acomplex((*this).re*c,(*this).im*c);
 }
 acomplex dcomplex::operator/(const AReal& c)
 const{
 /*    AReal tm=1./c;
     acomplex outCpx=(*this)*tm;*/
-    return acomplex((*this).getReal()/c,(*this).getImm()/c);
+    return acomplex((*this).re/c,(*this).im/c);
 }

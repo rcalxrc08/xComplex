@@ -426,6 +426,7 @@ namespace ad {
         return ret;
     }
 
+    ////ACOMPLEX
     inline areal cosh(const areal &x) {
         real erfX = std::cosh(x.val);
         areal ret = NewAReal(erfX);
