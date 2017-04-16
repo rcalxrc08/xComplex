@@ -64,8 +64,9 @@ typedef adept::adouble AReal;
 //#include "adept_source.h"
 #define STARTAD adept::Stack s1
 #define STARTREC(in) s1.new_recording()
-#define SETGRAD(in,out) out[0].set_gradient(1.0);s1.reverse()
-#define GETGRAD(in,i) (in[i].get_gradient())
+#define SETGRAD(in,out) out.set_gradient(1.0);s1.reverse()
+#define GETGRAD(in) (in.get_gradient())
+#define GETGRADV(in,i) (in[i].get_gradient())
 #define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
 typedef adept::adouble AReal;
 #define LVAL
