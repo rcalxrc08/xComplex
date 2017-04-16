@@ -17,11 +17,9 @@ acomplex operator*(const AReal& c,const dcomplex& in)
 {
     return in*c;
 }
-acomplex operator/(const AReal& c,const dcomplex& in)
+acomplex operator/(const AReal& c,const dcomplex& cpx)
 {
-    acomplex tmp=acomplex(c,0.0);
-
-    return tmp/in;
+    return acomplex((c*cpx.re)/cpx.getNormSqr(),(-c*cpx.im)/cpx.getNormSqr());
 }
 ////Acomplex
 
