@@ -12,11 +12,11 @@ DECLARE_ADGRAPH();
 #endif
 acomplex acomplex::operator+(const dcomplex& cpx)
 {
-    /*AReal r=(*this).getReal()+cpx.getReal();
-    AReal i=(*this).getImm()+cpx.getImm();
+    /*AReal r=re+cpx.getReal();
+    AReal i=im+cpx.getImm();
     acomplex outCpc=acomplex(r,i);*/
 
-    return acomplex((*this).getReal()+ cpx.getReal(), (*this).getImm()+ cpx.getImm());
+    return acomplex(re+ cpx.getReal(), im+ cpx.getImm());
 }
 acomplex acomplex::operator+=(const dcomplex& cpx)
 {
@@ -35,12 +35,12 @@ acomplex acomplex::operator-=(const dcomplex& cpx)
 
 acomplex acomplex::operator*(const dcomplex& cpx)
 {
-    /* AReal r=(*this).getReal()*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
-     AReal i=(*this).getImm()*cpx.getRealP()+(*this).getReal()*cpx.getImm();
+    /* AReal r=re*cpx.getRealP()-(*this).getImmP()*cpx.getImmP();
+     AReal i=im*cpx.getRealP()+re*cpx.getImm();
      acomplex outCpx=acomplex(r,i);*/
 
-    return acomplex((*this).getReal()* cpx.getReal()- (*this).getImm()* cpx.getImm(), (*this).getImm()* cpx.getReal()+
-                                                                                      (*this).getReal()* cpx.getImm());
+    return acomplex(re* cpx.getReal()- im* cpx.getImm(), im* cpx.getReal()+
+                                                         re* cpx.getImm());
 }
 acomplex acomplex::operator*=(const dcomplex& cpx)
 {
@@ -49,11 +49,11 @@ acomplex acomplex::operator*=(const dcomplex& cpx)
 
 acomplex acomplex::operator/(const dcomplex& cpx)
 {
-   /* dcomplex tmp=dcomplex(1.0,0.0);
-    tmp=tmp/cpx;*/
+    /* dcomplex tmp=dcomplex(1.0,0.0);
+     tmp=tmp/cpx;*/
 
 //    return (*this)*tmp;
-    return acomplex(((*this).getReal()*cpx.getReal()+(*this).getImm()*cpx.getImm())/cpx.getNormSqr(),((*this).getImm()*cpx.getReal()-(*this).getReal()*cpx.getImm())/cpx.getNormSqr());
+    return acomplex((re*cpx.getReal()+im*cpx.getImm())/cpx.getNormSqr(),(im*cpx.getReal()-re*cpx.getImm())/cpx.getNormSqr());
 }
 
 acomplex acomplex::operator/=(const dcomplex& cpx)
