@@ -282,6 +282,34 @@ TEST(AComplex, tan)
         std::cout<<"AComplex: "<<std::setprecision(Nprint)<<z1<<std::endl;
     }
 }
+TEST(AComplex, pow1)
+{
+#undef op
+#define op(x,N) pow(x,N)
+    Real aa= (Real)rand() / RAND_MAX;
+    Real bb= (Real)rand() / RAND_MAX;
+    STARTAD;
+    AReal a=aa;
+    AReal b=bb;
+    Real a1=aa;
+    Real b1=bb;
+    STARTREC();
+    acomplex z=acomplex(a,b);
+    std::complex<Real> z1=std::complex<Real>(a1,b1);
+    AReal v=2.9;
+    z  = op (z,v);
+    z1 = op (z1,LVAL v RVAL);
+    SETGRAD(a,z.getReal());
+
+    auto toll=1e-14;
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll);
+    EXPECT_NEAR(z1.imag(), LVAL z.getImm() RVAL,toll);
+    if (HasFailure())
+    {
+        std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
+        std::cout<<"AComplex: "<<std::setprecision(Nprint)<<z1<<std::endl;
+    }
+}
 TEST(AComplex, exp)
 {
 #undef op

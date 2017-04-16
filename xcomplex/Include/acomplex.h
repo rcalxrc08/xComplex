@@ -42,11 +42,11 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, acomplex& obj)
     {
-        AReal tmpIM=(-1.0*obj.getImm());
+        AReal tmpIM=(-1.0*obj.im);
         Real tmp1=LVAL tmpIM RVAL;
-        Real re=LVAL obj.getReal() RVAL;
-        Real im=LVAL obj.getImm() RVAL;
-        if(obj.getImm()>=0.0)
+        Real re=LVAL obj.re RVAL;
+        Real im=LVAL obj.im RVAL;
+        if(obj.im>=0.0)
             os<<re<<" + "<<ImagUnit<<" "<<im;
         else
             os<<re<<" - "<<ImagUnit<<" "<<(tmp1);
@@ -56,7 +56,7 @@ public:
 ////InterClass Operators
     bool operator==(acomplex& o)
     {
-        return (im==o.getImm()&&re==o.getReal());
+        return (im==o.im&&re==o.re);
     }
 
     bool operator!=(acomplex& o)
@@ -163,22 +163,22 @@ public:
     ////Acomplex op Acomplex
     inline acomplex operator+(const acomplex& cpx) //Acomplex SUM
     const{
-        return acomplex(re + cpx.getReal(),im + cpx.getImm());
+        return acomplex(re + cpx.re,im + cpx.im);
     }
 
     inline acomplex operator-(const acomplex& cpx)
     const{
-        return acomplex(re-cpx.getReal(),im-cpx.getImm());;
+        return acomplex(re-cpx.re,im-cpx.im);;
     }
 
     inline acomplex operator*(const acomplex& cpx)
     const{
-        return acomplex(re*cpx.getReal()-im*cpx.getImm(),im*cpx.getReal()+re*cpx.getImm());
+        return acomplex(re*cpx.re-im*cpx.im,im*cpx.re+re*cpx.im);
     }
 
     inline acomplex operator/(const acomplex& cpx)
     const{
-        return acomplex((re*cpx.getReal()+im*cpx.getImm())/cpx.getNormSqr(),(im*cpx.getReal()-re*cpx.getImm())/cpx.getNormSqr());
+        return acomplex((re*cpx.re+im*cpx.im)/cpx.getNormSqr(),(im*cpx.re-re*cpx.im)/cpx.getNormSqr());
     }
 
     ////op=
@@ -230,19 +230,19 @@ public:
     friend acomplex exp(const acomplex& in)
     {
 
-        return acomplex(exp(in.getReal())*cos(in.getImm()),exp(in.getReal())*sin(in.getImm()));
+        return acomplex(exp(in.re)*cos(in.im),exp(in.re)*sin(in.im));
     }
 
     friend acomplex cos(const acomplex& in)
     {
 
-        return acomplex(cosh((in).getImm())*cos((in).getReal()),-1.*sin((in).getReal())*sinh((in).getImm()));
+        return acomplex(cosh((in).im)*cos((in).re),-1.*sin((in).re)*sinh((in).im));
     }
 
     friend acomplex sin(const acomplex& in)
     {
 
-        return acomplex(sin(in.getReal())*cosh(in.getImm()),cos((in).getReal())*sinh((in).getImm()));
+        return acomplex(sin(in.re)*cosh(in.im),cos((in).re)*sinh((in).im));
     }
 
     friend acomplex tan(const acomplex& in)
