@@ -21,7 +21,7 @@ TEST(AComplex, plusScalar)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -49,7 +49,7 @@ TEST(AComplex, minusScalar)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -77,7 +77,7 @@ TEST(AComplex, multiplyScalar)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -104,7 +104,7 @@ TEST(AComplex, divideScalar)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op cc;
     z1 =z1 op cc;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     /*EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);*/
@@ -136,7 +136,7 @@ TEST(AComplex, plus)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op z;
     z1 =z1 op z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -163,7 +163,7 @@ TEST(AComplex, multiplication)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z =z op z;
     z1=z1 op z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -190,7 +190,7 @@ TEST(AComplex, divide)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  =z op z;
     z1 =z1 op z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -219,7 +219,7 @@ TEST(AComplex, sin)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -245,7 +245,7 @@ TEST(AComplex, cos)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
@@ -271,7 +271,7 @@ TEST(AComplex, tan)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     auto toll=1e-14;
     EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll);
@@ -299,7 +299,7 @@ TEST(AComplex, pow1)
     AReal v=2.9;
     z  = op (z,v);
     z1 = op (z1,LVAL v RVAL);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     auto toll=1e-14;
     EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll);
@@ -326,7 +326,7 @@ TEST(AComplex, exp)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), z.getImm()RVAL);
@@ -444,7 +444,7 @@ TEST(AComplex, MixedTest)
     std::complex<Real> z1=std::complex<Real>(a1,b1);
     z  = op (z);
     z1 = op (z1);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
     EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);

@@ -24,7 +24,7 @@ TEST(AComplexDerivative, log)
     Real y=op (z1).real();
     Real FDDer=(yDy-y)/dx;
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -57,7 +57,7 @@ TEST(AComplexDerivative, sin)
     Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -90,7 +90,7 @@ TEST(AComplexDerivative, cos)
     Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -123,7 +123,7 @@ TEST(AComplexDerivative, tan)
     Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -155,7 +155,7 @@ TEST(AComplexDerivative, exp)
     Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -188,7 +188,7 @@ TEST(AComplexDerivative, mixed1)
     Real FDDer=(yDy-y)/dx;
 
     z  =op(z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -222,7 +222,7 @@ TEST(AComplexDerivative, mixed2)
     Real y=op (z1).real();
     Real FDDer=(yDy-y)/dx;
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -257,7 +257,7 @@ TEST(AComplexDerivative, mixed3)
     Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;
@@ -293,7 +293,7 @@ TEST(AComplexDerivative, mixed4)
     Real FDDer=(yDy-y)/dx;
 
     z  =op (z);
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
     Real DerToll=toll1*1000;

@@ -24,7 +24,7 @@ TEST(AComplexMixed, plusScalarMixControl)
     z1 =z1 op cc;
     z1+=z1;
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
@@ -53,7 +53,7 @@ TEST(AComplexMixed, minusScalarMixControl)
     z  =z op cc;
     z1 =z1 op cc;
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
@@ -82,7 +82,7 @@ TEST(AComplexMixed, multiplyScalarMixControl)
     z  =z op cc;
     z1 =z1 op cc;
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
@@ -110,7 +110,7 @@ TEST(AComplexMixed, divideScalarMixControl)
     z  =z op cc;
     z1 =z1 op cc;
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
@@ -141,7 +141,7 @@ TEST(AComplexMixed, plusMixControl)
     z  =z op cc;
     z1 =z1 op cc;
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
@@ -172,7 +172,7 @@ TEST(AComplexMixed, multiplicationMixControl)
     z1*=z1;
     z1 =z1 op cc;
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
@@ -201,7 +201,7 @@ TEST(AComplexMixed, divideMixControl)
     z  =z op cc;
     z1 =z1 op cc;
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
 
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
@@ -232,7 +232,7 @@ TEST(AComplexMixed, sinMixControl)
     z  =z*op(cc);
     z1 =z1*op(cc);
     acomplex res=z-z1;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
     if (HasFailure())
@@ -260,7 +260,7 @@ TEST(AComplexMixed, cosMixControl)
     z  =tan(z)*exp(z)*log(z1)*sin(z1);
 //    z1 =z1 op cc;
     acomplex res=z*z1*zero;
-    SETGRAD(a,z.getReal());
+    SETGRAD(1.0,z.getReal());
     EXPECT_EQ(LVAL res.getReal() RVAL,0.0);
     EXPECT_EQ(LVAL res.getImm() RVAL,0.0);
     if (HasFailure())
