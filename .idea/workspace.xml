@@ -19,11 +19,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9a281b2c-2e6b-4080-ad4f-f9129f610169" name="Default" comment="Test All Green">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ad/ad.h" afterPath="$PROJECT_DIR$/ad/ad.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp" afterPath="$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp" afterPath="$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Include/acomplex.h" afterPath="$PROJECT_DIR$/xcomplex/Include/acomplex.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Include/dcomplex.h" afterPath="$PROJECT_DIR$/xcomplex/Include/dcomplex.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xcomplex/Include/adatan2.h" afterPath="$PROJECT_DIR$/xcomplex/Include/adatan2.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +39,7 @@
       <file leaf-file-name="dcomplex.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
+            <state relative-caret-position="3968">
               <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
               <folding>
                 <element signature="e#120#136#0" expanded="true" />
@@ -52,21 +49,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adept_source.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Adept/adept_source.h">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="208">
+              <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+            <state relative-caret-position="160">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="travisRun.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/travisRun.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/acomplex.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
-              <caret line="220" column="56" lean-forward="false" selection-start-line="220" selection-start-column="56" selection-end-line="220" selection-end-column="56" />
+              <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
               <folding>
                 <element signature="e#86#102#0" expanded="true" />
                 <element signature="e#255#275#0" expanded="true" />
@@ -95,26 +102,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adatan2.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adatan2.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xcomplex/Include/adatan2.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="88" column="15" lean-forward="false" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
               <folding>
                 <element signature="e#83#100#0" expanded="true" />
-                <marker date="1492380134059" expanded="false" signature="1170:1554" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MixedTest.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/MixedTest.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,7 +142,7 @@
       <file leaf-file-name="dcomplex.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="1424">
               <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding />
             </state>
@@ -207,9 +201,10 @@
         <option value="$PROJECT_DIR$/xcomplex/Include/acomplex.h" />
         <option value="$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp" />
         <option value="$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp" />
-        <option value="$PROJECT_DIR$/xcomplex/Include/adatan2.h" />
         <option value="$PROJECT_DIR$/xcomplex/Include/dcomplex.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/xcomplex/Include/adatan2.h" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -265,10 +260,6 @@
               <option name="myItemId" value="xcomplex" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -285,20 +276,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Coder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AComplexClass" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XComplexTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -660,7 +637,8 @@
       <workItem from="1492254510042" duration="1142000" />
       <workItem from="1492359895761" duration="4577000" />
       <workItem from="1492369681424" duration="1561000" />
-      <workItem from="1492379008976" duration="1214000" />
+      <workItem from="1492379008976" duration="1756000" />
+      <workItem from="1492433509933" duration="3171000" />
     </task>
     <task id="LOCAL-00001" summary="Modified #DEFINE for functions">
       <created>1488313402130</created>
@@ -687,21 +665,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="runAllTests - 2017.04.16 at 21h 17m 50s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.04.16 at 21h 21m 07s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.04.16 at 21h 23m 42s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.04.16 at 23h 45m 08s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="runAllTests - 2017.04.16 at 23h 46m 38s.xml">
-      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="runAllTests - 2017.04.16 at 23h 47m 06s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
@@ -717,32 +680,47 @@
     <history-entry file="runAllTests - 2017.04.17 at 00h 06m 56s.xml">
       <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="runAllTests - 2017.04.17 at 14h 52m 01s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.04.17 at 14h 53m 03s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.04.17 at 15h 16m 20s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.04.17 at 15h 17m 01s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="runAllTests - 2017.04.17 at 16h 00m 01s.xml">
+      <configuration name="runAllTests" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60501000" />
+    <option name="totallyTimeSpent" value="64214000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="912" extended-state="7" />
+    <frame x="-1" y="0" width="1922" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29829243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30149412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39949432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -771,13 +749,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtests/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -824,13 +795,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/gtests/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -959,18 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-          <folding>
-            <marker date="1492362368632" expanded="true" signature="149:275" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="296:356" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="384:545" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="566:859" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="880:1319" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="1340:1813" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="1834:2273" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="2294:2733" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="2754:3227" ph="{...}" />
-            <marker date="1492362368632" expanded="true" signature="3248:3729" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,6 +969,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1424">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3968">
+          <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
+          <folding>
+            <element signature="e#120#136#0" expanded="true" />
+            <marker date="1492380290632" expanded="true" signature="251:5487" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xcomplex/Include/acomplex.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+          <folding>
+            <element signature="e#86#102#0" expanded="true" />
+            <element signature="e#255#275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travisRun.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/xcomplex/Coder/acomplex.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1028,52 +1026,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xcomplex/Coder/dcomplex.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="208">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xcomplex/Include/acomplex.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="220" column="56" lean-forward="false" selection-start-line="220" selection-start-column="56" selection-end-line="220" selection-end-column="56" />
-          <folding>
-            <element signature="e#86#102#0" expanded="true" />
-            <element signature="e#255#275#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xcomplex/Include/dcomplex.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
-          <folding>
-            <element signature="e#120#136#0" expanded="true" />
-            <marker date="1492380290632" expanded="true" signature="251:5487" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xcomplex/Include/adatan2.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="88" column="15" lean-forward="false" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
           <folding>
             <element signature="e#83#100#0" expanded="true" />
-            <marker date="1492380134059" expanded="false" signature="1170:1554" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>

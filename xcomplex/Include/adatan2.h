@@ -88,7 +88,7 @@ inline Real adtan2(Real y, Real x)
     }
     return out;
 }
-inline AReal atan2(AReal y, AReal x)
+inline AReal atan2(const AReal& y,const AReal& x)
 {
     AReal  out=0.0;
     Real xval=LVAL x RVAL;
