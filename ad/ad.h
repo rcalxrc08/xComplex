@@ -1,11 +1,11 @@
 #ifndef HAD_H__
 #define HAD_H__
 #ifdef WIN32
-#define thread thread_local
+#define threadDefine thread_local
 #endif
 #ifdef __unix
 #define USE_AATREE
-#define thread __thread
+#define threadDefine __thread
 #endif
 
 #include <vector>
@@ -43,9 +43,9 @@ namespace ad {
     struct ADGraph;
     struct areal;
 
-    extern thread ADGraph* g_ADGraph;
+    extern threadDefine ADGraph* g_ADGraph;
 // Declare this in your .cpp source
-#define DECLARE_ADGRAPH() namespace ad { thread ADGraph* g_ADGraph = 0; }
+#define DECLARE_ADGRAPH() namespace ad { threadDefine ADGraph* g_ADGraph = 0; }
 
     areal NewAReal(const real val);
 
