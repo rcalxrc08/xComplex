@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.3)
 project(AComplexClass)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUSE_ADDICT -std=gnu++11")
+set(ADJOINTLIB ADDICT)
+IF(WIN32)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUSE_${ADJOINTLIB}")
+ELSEIF(UNIX)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUSE_${ADJOINTLIB} -std=gnu++11")
+ENDIF()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 set(CMAKE_CXX_STANDARD 11)
 add_subdirectory(gtests)

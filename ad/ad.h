@@ -1,12 +1,20 @@
 #ifndef HAD_H__
 #define HAD_H__
-#pragma once
+#ifdef WIN32
+#define thread thread_local
+#endif
+#ifdef __unix
+#define USE_AATREE
+#define thread __thread
+#endif
+
 #include <vector>
 #include <cmath>
+#include <algorithm>
 
-#define USE_AATREE
-
-
+#ifndef M_PI
+#define M_PI std::acos(-1)
+#endif
 template <typename S>
 S normcdf(S in)
 {
@@ -35,9 +43,9 @@ namespace ad {
     struct ADGraph;
     struct areal;
 
-    extern __thread ADGraph* g_ADGraph;
+    extern thread ADGraph* g_ADGraph;
 // Declare this in your .cpp source
-#define DECLARE_ADGRAPH() namespace ad { __thread ADGraph* g_ADGraph = 0; }
+#define DECLARE_ADGRAPH() namespace ad { thread ADGraph* g_ADGraph = 0; }
 
     areal NewAReal(const real val);
 
@@ -149,7 +157,7 @@ namespace ad {
                     index = *lastEdge;
                 } while (index >= 0);
 
-                *lastEdge = nodes.size();
+                *lastEdge =(int) nodes.size();
             }
             nodes.push_back(BTNode(key, val));
 #ifdef USE_AATREE
@@ -199,7 +207,7 @@ namespace ad {
 
     inline areal NewAReal(const real val) {
         std::vector<ADVertex> &vertices = g_ADGraph->vertices;
-        VertexId newId = vertices.size();
+        VertexId newId =(int) vertices.size();
         vertices.push_back(ADVertex(newId));
         return areal(val, newId);
     }
@@ -426,7 +434,6 @@ namespace ad {
         return ret;
     }
 
-    ////ACOMPLEX
     inline areal cosh(const areal &x) {
         real erfX = std::cosh(x.val);
         areal ret = NewAReal(erfX);
@@ -509,7 +516,7 @@ namespace ad {
         g_ADGraph->selfSoEdges.resize(g_ADGraph->vertices.size(), real(0.0));
         // Any chance for SSE/AVX parallism?
 
-        for (VertexId vid = g_ADGraph->vertices.size() - 1; vid > 0; vid--) {
+        for (VertexId vid =(int) g_ADGraph->vertices.size() - 1; vid > 0; vid--) {
             ADVertex &vertex = g_ADGraph->vertices[vid];
             ADEdge &e1 = vertex.e1;
             ADEdge &e2 = vertex.e2;

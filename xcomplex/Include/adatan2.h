@@ -72,6 +72,9 @@ typedef adept::adouble AReal;
 #define LVAL adept::value(
 #define RVAL )
 #endif
+#ifndef M_PI
+#define M_PI std::acos(-1.)
+#endif
 typedef double Real;
 
 
