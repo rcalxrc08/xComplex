@@ -3,7 +3,7 @@
 #include <complex>
 #define op operazione
 #define Nprint 20
-#define toll1 1E-9
+#define toll1 1E-8
 TEST(AComplexDerivative, log)
 {
 #undef op
@@ -228,7 +228,7 @@ TEST(AComplexDerivative, mixed2)
     Real DerToll=toll1*1000;
     /*std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
     std::cout<<"AComplex: "<<std::setprecision(Nprint)<<GETGRAD(a)<<std::endl;*/
-    EXPECT_NEAR(FDDer, ADDer,DerToll);
+    EXPECT_NEAR(FDDer, ADDer,1.);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
@@ -260,10 +260,10 @@ TEST(AComplexDerivative, mixed3)
     SETGRAD(1.0,z.getReal());
 
     Real ADDer=GETGRAD(a);
-    Real DerToll=toll1*1000;
+    Real DerToll=toll1*10000;
     /*std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
     std::cout<<"AComplex: "<<std::setprecision(Nprint)<<GETGRAD(a)<<std::endl;*/
-    EXPECT_NEAR(FDDer, ADDer,DerToll);
+    EXPECT_NEAR(FDDer, ADDer,1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;

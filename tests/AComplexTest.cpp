@@ -192,8 +192,8 @@ TEST(AComplex, divide)
     z1 =z1 op z1;
     SETGRAD(1.0,z.getReal());
 
-    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
-    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll1);
+    EXPECT_NEAR(z1.imag(), LVAL z.getImm() RVAL,toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -221,8 +221,8 @@ TEST(AComplex, sin)
     z1 = op (z1);
     SETGRAD(1.0,z.getReal());
 
-    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
-    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll1);
+    EXPECT_NEAR(z1.imag(), LVAL z.getImm() RVAL,toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -247,8 +247,8 @@ TEST(AComplex, cos)
     z1 = op (z1);
     SETGRAD(1.0,z.getReal());
 
-    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
-    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll1);
+    EXPECT_NEAR(z1.imag(), LVAL z.getImm() RVAL,toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -328,8 +328,8 @@ TEST(AComplex, exp)
     z1 = op (z1);
     SETGRAD(1.0,z.getReal());
 
-    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
-    EXPECT_EQ(z1.imag(), z.getImm()RVAL);
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll1);
+    EXPECT_NEAR(z1.imag(), z.getImm()RVAL,toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -446,8 +446,8 @@ TEST(AComplex, MixedTest)
     z1 = op (z1);
     SETGRAD(1.0,z.getReal());
 
-    EXPECT_EQ(z1.real(), LVAL z.getReal() RVAL);
-    EXPECT_EQ(z1.imag(), LVAL z.getImm() RVAL);
+    EXPECT_NEAR(z1.real(), LVAL z.getReal() RVAL,toll1);
+    EXPECT_NEAR(z1.imag(), LVAL z.getImm() RVAL,toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;

@@ -142,8 +142,9 @@ TEST(DComplex, pow)
 	std::complex<double> x1=std::complex<double>(a,b);
 	x=op (x,n);
 	x1=op (x1,n);
-	EXPECT_EQ(x1.real(), x.getReal());
-	EXPECT_EQ(x1.imag(), x.getImm());
+    double tollen=1e-10;
+	EXPECT_NEAR(x1.real(), x.getReal(),tollen);
+	EXPECT_NEAR(x1.imag(), x.getImm(),tollen);
 	if (HasFailure())
 	{
 		std::cout<<"Complex: "<<std::setprecision(Nprint)<<x1<<std::endl;

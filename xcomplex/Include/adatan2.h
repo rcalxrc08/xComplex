@@ -32,7 +32,7 @@ typedef cl::tdouble AReal;
 using namespace ad;
 typedef areal AReal;
 #define STARTAD  ADGraph adGraph
-#define STARTREC(in) auto pxoieMJbGFUm1=1
+#define STARTREC() auto pxoieMJbGFUm1=1
 #define SETGRAD(in,out)  SetAdjoint(out, 1.0);PropagateAdjoint();
 #define GETGRAD(in) GetAdjoint(in)
 #define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
@@ -46,7 +46,7 @@ typedef areal AReal;
 #define NAMELIB "Using Adept 1.0 Library"
 #include "adept.h"
 #define STARTAD adept::Stack s1
-#define STARTREC(in) s1.new_recording()
+#define STARTREC() s1.new_recording()
 #define SETGRAD(in,out) out.set_gradient(1.0);s1.reverse()
 #define GETGRAD(in) (in.get_gradient())
 #define GETGRADS(in,i) for_each( in.begin(), in.end(), [](double ss) { cout << ss; } );
