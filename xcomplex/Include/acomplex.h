@@ -4,14 +4,6 @@
 
 #ifndef TESI_ACOMPLEX_H
 #define TESI_ACOMPLEX_H
-
-//friend acomplex exp(const acomplex& in)
-//{
-//
-//    return acomplex(exp(in.re)*cos(in.im),exp(in.re)*sin(in.im));
-//}
-
-
 #include <cmath>
 #include <vector>
 #include "adatan2.h"
