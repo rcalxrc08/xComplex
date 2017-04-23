@@ -4,6 +4,14 @@
 
 #ifndef TESI_ACOMPLEX_H
 #define TESI_ACOMPLEX_H
+
+//friend acomplex exp(const acomplex& in)
+//{
+//
+//    return acomplex(exp(in.re)*cos(in.im),exp(in.re)*sin(in.im));
+//}
+
+
 #include <cmath>
 #include <vector>
 #include "adatan2.h"
@@ -20,15 +28,22 @@ using namespace std;
 using namespace ad;
 #endif
 
+//inline acomplex operator+(const acomplex& cpx) //Acomplex SUM
+//const{
+//    return acomplex(re + cpx.re,im + cpx.im);
+//}
 class acomplex
 {
+#define FUNCDEFINE(fun,RealPart,ImmaginaryPart)friend acomplex fun (const acomplex& in) {return acomplex(RealPart,ImmaginaryPart); }
+#define ACPXOPDEFINE(OP,RealPart,ImmaginaryPart) inline acomplex operator OP (const acomplex& cpx) const{return acomplex(RealPart,ImmaginaryPart);}
+#define ACPXOPEQDEFINE(OP,Complex) inline acomplex operator OP (const acomplex& cpx) const{return Complex;}
+
 public:////Attributse
     AReal re;
     AReal im;
 public:
     explicit acomplex () {}
     explicit acomplex (const AReal& RealP,const AReal& im) :re(RealP),im(im){}
-
 ////IntraClass Operators
     AReal getReal() const {return re;}
 
@@ -65,156 +80,77 @@ public:
     }
 
 ////acomplex op AReal
-    inline acomplex operator+(const AReal& arealNum) //Adouble SUM
-    const {
-        return acomplex(re+arealNum,im);
-    }
+#define ACPXOPAREAL(OP,RealP,ImmP) inline acomplex operator OP (const AReal& arealNum) const { return acomplex(RealP,ImmP);}
+    ACPXOPAREAL(+,re+arealNum,im);
+    ACPXOPAREAL(-,re-arealNum,im);
+    ACPXOPAREAL(*,re*arealNum,im*arealNum);
+    ACPXOPAREAL(/,re/arealNum,im/arealNum);
+#define ACPXOPEQAREAL(OP,ACOMPLEX) inline acomplex operator OP (const AReal& arealNum) const { return ACOMPLEX; }
 
-    inline acomplex operator-(const AReal& arealNum)
-    const{
-        return acomplex(re-arealNum,im);
-    }
+    ACPXOPEQAREAL(+=, (*this)+arealNum);
+    ACPXOPEQAREAL(-=, (*this)-arealNum);
+    ACPXOPEQAREAL(*=, (*this)*arealNum);
+    ACPXOPEQAREAL(/=, (*this)/arealNum);
 
-    inline acomplex operator*(const AReal& arealNum)
-    const{
-        return acomplex(re*arealNum,im*arealNum);
-    }
-
-    inline acomplex operator/(const AReal& arealNum)
-    const{
-        return acomplex(re/arealNum,im/arealNum);
-    }
-
-    ////op=
-    inline acomplex operator+=(const AReal& arealNum) //Double SUM
-    const {
-        return (*this)+arealNum;
-    }
-
-    inline acomplex operator-=(const AReal& arealNum)
-    const{
-        return (*this)-arealNum;
-    }
-
-    inline acomplex operator*=(const AReal& arealNum)
-    const{
-        return (*this)*arealNum;
-    }
-
-    inline acomplex operator/=(const AReal& arealNum)
-    const{
-        return (*this)/arealNum;
-    }
-
+#define ACPXOPREAL(OP,RealP,ImmP) inline acomplex operator OP (const Real& realNum) const { return acomplex(RealP,ImmP);}
     ////Acomplex op Real
-    inline acomplex operator+(const Real& realNum) //Double SUM
-    const {
-        return acomplex(re+realNum,im);
-    }
-
-    inline acomplex operator-(const Real& realNum)
-    const{
-        return acomplex(re-realNum,im);
-    }
-
-    inline acomplex operator*(const Real& realNum)
-    const{
-        return acomplex(re*realNum,im*realNum);
-    }
-
-    inline acomplex operator/(const Real& realNum)
-    const{
-        return acomplex(re/realNum,im/realNum);
-    }
+    ACPXOPREAL(+,re+realNum,im);
+    ACPXOPREAL(-,re-realNum,im);
+    ACPXOPREAL(*,re*realNum,im*realNum);
+    ACPXOPREAL(/,re/realNum,im/realNum);
+#define ACPXOPEQREAL(OP,ACOMPLEX) inline acomplex operator OP (const Real& realNum) const { return ACOMPLEX;}
     ////op=
-    inline acomplex operator+=(const Real& realNum) //Double SUM
-    const {
-        return (*this)+realNum;
-    }
-
-    inline acomplex operator-=(const Real& realNum)
-    const{
-        return (*this)-realNum;
-    }
-
-    inline acomplex operator*=(const Real& realNum)
-    const{
-        return (*this)*realNum;
-    }
-
-    inline acomplex operator/=(const Real& realNum)
-    const{
-        return (*this)/realNum;
-    }
+    ACPXOPEQREAL(+=,(*this)+realNum);
+    ACPXOPEQREAL(-=,(*this)-realNum);
+    ACPXOPEQREAL(*=,(*this)*realNum);
+    ACPXOPEQREAL(/=,(*this)/realNum);
 
 
 
     ////Real op Acomplex
-    friend acomplex operator+(Real c,const acomplex& in);
-    friend acomplex operator*(Real c,const acomplex& in);
-    friend acomplex operator/(Real c,const acomplex& in);
-    friend acomplex operator-(Real c,const acomplex& in);
+#define DECLFRNDMIX(OP) friend acomplex operator OP (Real c,const acomplex& in);
+    DECLFRNDMIX(+)
+    DECLFRNDMIX(-)
+    DECLFRNDMIX(*)
+    DECLFRNDMIX(/)
+
     ////AReal op Acomplex
-    friend acomplex operator+(const AReal& arealNum,const acomplex& in);
-    friend acomplex operator*(const AReal& arealNum,const acomplex& in);
-    friend acomplex operator/(const AReal& arealNum,const acomplex& in);
-    friend acomplex operator-(const AReal& arealNum,const acomplex& in);
+#define DECLFRNDMIX2(OP) friend acomplex operator OP (const AReal& arealNum,const acomplex& in);
+    DECLFRNDMIX2(+)
+    DECLFRNDMIX2(-)
+    DECLFRNDMIX2(*)
+    DECLFRNDMIX2(/)
 
     ////Acomplex op Acomplex
-    inline acomplex operator+(const acomplex& cpx) //Acomplex SUM
-    const{
-        return acomplex(re + cpx.re,im + cpx.im);
-    }
+    ACPXOPDEFINE(+,re+cpx.re,im+cpx.im)
+    ACPXOPDEFINE(-,re-cpx.re,im-cpx.im)
+    ACPXOPDEFINE(*,re*cpx.re-im*cpx.im,im*cpx.re+re*cpx.im)
+    ACPXOPDEFINE(/,(re*cpx.re+im*cpx.im)/cpx.getNormSqr(),(im*cpx.re-re*cpx.im)/cpx.getNormSqr())
+    ////Acomplex op= Acomplex
+    ACPXOPEQDEFINE(+=,(*this)+cpx)
+    ACPXOPEQDEFINE(-=,(*this)-cpx)
+    ACPXOPEQDEFINE(*=,(*this)*cpx)
+    ACPXOPEQDEFINE(/=,(*this)/cpx)
 
-    inline acomplex operator-(const acomplex& cpx)
-    const{
-        return acomplex(re-cpx.re,im-cpx.im);;
-    }
-
-    inline acomplex operator*(const acomplex& cpx)
-    const{
-        return acomplex(re*cpx.re-im*cpx.im,im*cpx.re+re*cpx.im);
-    }
-
-    inline acomplex operator/(const acomplex& cpx)
-    const{
-        return acomplex((re*cpx.re+im*cpx.im)/cpx.getNormSqr(),(im*cpx.re-re*cpx.im)/cpx.getNormSqr());
-    }
-
-    ////op=
-    inline acomplex operator+=(const acomplex& cpx)
-    const{
-        return (*this)+cpx;
-    }
-
-    inline acomplex operator-=(const acomplex& cpx)
-    const{
-        return (*this)-cpx;
-    }
-
-    inline acomplex operator*=(const acomplex& cpx)
-    const{
-        return (*this)*cpx;
-    }
-
-    inline acomplex operator/=(const acomplex& cpx)
-    const{
-        return (*this)/cpx;
-    }
 
     ////acomplex op dcomplex
-    acomplex operator+(const dcomplex& cpx);////ADJ
-    acomplex operator-(const dcomplex& cpx);////ADJ
-    acomplex operator*(const dcomplex& cpx);////ADJ
-    acomplex operator/(const dcomplex& cpx);////ADJ
+#define DECLACPXDCPX(OP) acomplex operator OP (const dcomplex& cpx);
+    DECLACPXDCPX(+)
+    DECLACPXDCPX(-)
+    DECLACPXDCPX(*)
+    DECLACPXDCPX(/)
     ////op=
-    acomplex operator+=(const dcomplex& cpx);////ADJ
-    acomplex operator-=(const dcomplex& cpx);////ADJ
-    acomplex operator*=(const dcomplex& cpx);////ADJ
-    acomplex operator/=(const dcomplex& cpx);////ADJ
+    DECLACPXDCPX(+=)
+    DECLACPXDCPX(-=)
+    DECLACPXDCPX(*=)
+    DECLACPXDCPX(/=)
 
 ////Mathematical Operations
 
+    FUNCDEFINE(exp,exp(in.re)*cos(in.im),exp(in.re)*sin(in.im))
+    FUNCDEFINE(cos,cosh((in).im)*cos((in).re),-1.*sin((in).re)*sinh((in).im))
+    FUNCDEFINE(sin,sin(in.re)*cosh(in.im),cos((in).re)*sinh((in).im))
+    FUNCDEFINE(log,log(in.getRho()),in.getTheta())
     friend acomplex pow(const acomplex& in,const AReal& n)
     {
 
@@ -227,35 +163,11 @@ public:
         return acomplex(cos(n*in.getTheta())*pow(in.getRho(),n),sin(n*in.getTheta())*pow(in.getRho(),n));
     }
 
-    friend acomplex exp(const acomplex& in)
-    {
-
-        return acomplex(exp(in.re)*cos(in.im),exp(in.re)*sin(in.im));
-    }
-
-    friend acomplex cos(const acomplex& in)
-    {
-
-        return acomplex(cosh((in).im)*cos((in).re),-1.*sin((in).re)*sinh((in).im));
-    }
-
-    friend acomplex sin(const acomplex& in)
-    {
-
-        return acomplex(sin(in.re)*cosh(in.im),cos((in).re)*sinh((in).im));
-    }
-
     friend acomplex tan(const acomplex& in)
     {
         //TODO Optimize function tangent for acomplex
 
         return sin(in)/cos(in);
-    }
-
-    friend acomplex log(const acomplex& in)
-    {
-
-        return acomplex(log(in.getRho()),in.getTheta());
     }
     friend void swap(acomplex& a, acomplex& b)
     {
