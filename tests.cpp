@@ -7,5 +7,9 @@ int main(int argc, char **argv)
     std::cout<<NAMELIB<<std::endl;
     testing::InitGoogleTest(&argc, argv);
     std::cout<<"Starting Test"<<std::endl;
-    return RUN_ALL_TESTS();
+    int Out= RUN_ALL_TESTS();
+#ifdef _WIN32
+	system("pause");
+#endif
+	return Out;
 }
