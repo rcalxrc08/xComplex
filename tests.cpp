@@ -8,8 +8,10 @@ int main(int argc, char **argv)
     testing::InitGoogleTest(&argc, argv);
     std::cout<<"Starting Test"<<std::endl;
     int Out= RUN_ALL_TESTS();
+#ifndef CLIONFLAG
 #ifdef _WIN32
 	system("pause");
+#endif
 #endif
 	return Out;
 }

@@ -1,6 +1,6 @@
 #ifndef HAD_H__
 #define HAD_H__
-#ifdef WIN32
+#ifdef _WIN32
 #define threadDefine thread_local
 #endif
 #ifdef __unix
