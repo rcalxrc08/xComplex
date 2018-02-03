@@ -1,16 +1,16 @@
-# xComplex Class for Adjoint Algorithmic Differentiation [![Build Status](https://travis-ci.org/rcalxrc08/xComplex.svg?branch=master)](https://travis-ci.org/rcalxrc08/xComplex)
+## xComplex: Class Numbers for Algorithmic Differentiation [![Build Status](https://travis-ci.org/rcalxrc08/xComplex.svg?branch=master)](https://travis-ci.org/rcalxrc08/xComplex)
 
-## Goal:
-- Complex numbers support for Adjoint Library (Adept) and standard library.
+### Goal:
+- Complex numbers support for [Adept](https://github.com/rjhogan/Adept) library and standard library.
 
-## How to Build:
+### How to Build:
 
 - `mkdir build`
 - `cd build`
 - `cmake ..`
 - `make all`
-- `./runAllTests`
+- `./test_xcomplex`
 
-## TODO:
+### TODO:
 
 - Compatibility with std::complex class
