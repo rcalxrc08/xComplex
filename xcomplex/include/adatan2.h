@@ -8,6 +8,9 @@
 #include <cmath>
 #include <stdexcept>
 #include "adept.h"
+#ifndef M_PI
+#define M_PI std::acos(-1.0)
+#endif
 
 typedef double Real;
 typedef adept::adouble AReal;

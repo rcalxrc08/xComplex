@@ -193,8 +193,8 @@ TEST(AComplex, divide)
     z1 =z1 op z1;
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    EXPECT_NEAR(z1.real(), z.getReal().value(),toll1);
+    EXPECT_NEAR(z1.imag(), z.getImm().value(),toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -222,8 +222,8 @@ TEST(AComplex, sin)
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    EXPECT_NEAR(z1.real(), z.getReal().value(),toll1);
+    EXPECT_NEAR(z1.imag(), z.getImm().value(),toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -248,8 +248,8 @@ TEST(AComplex, cos)
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    EXPECT_NEAR(z1.real(), z.getReal().value(),toll1);
+    EXPECT_NEAR(z1.imag(), z.getImm().value(),toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;
@@ -301,8 +301,8 @@ TEST(AComplex, exp)
     z1 = op (z1);
     z.getReal().set_gradient(1.0);
     s1.reverse();
-    EXPECT_EQ(z1.real(), z.getReal().value());
-    EXPECT_EQ(z1.imag(), z.getImm().value());
+    EXPECT_NEAR(z1.real(), z.getReal().value(),toll1);
+    EXPECT_NEAR(z1.imag(), z.getImm().value(),toll1);
     if (HasFailure())
     {
         std::cout<<"SComplex: "<<std::setprecision(Nprint)<<z<<std::endl;

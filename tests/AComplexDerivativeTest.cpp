@@ -262,7 +262,7 @@ TEST(AComplexDerivative, mixed3)
     z.getReal().set_gradient(1.0);
     s1.reverse();
     double ADDer=a.get_gradient();
-    double DerToll=toll1*1000;
+    double DerToll=0.01;
     /*std::cout<<"SComplex: "<<std::setprecision(Nprint)<<FDDer<<std::endl;
     std::cout<<"AComplex: "<<std::setprecision(Nprint)<<a.get_gradient()<<std::endl;*/
     EXPECT_NEAR(FDDer, ADDer,DerToll);
