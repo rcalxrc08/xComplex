@@ -1,16 +1,16 @@
-# AComplex Class for Adjoint Algorithmic Differentiation ![Build Status](https://travis-ci.com/rcalxrc08/XComplexTest.svg?token=f7vN7DePVEtSchNhUz16&branch=ClionBranch)
+# xComplex Class for Adjoint Algorithmic Differentiation
 
-Goal:
+## Goal:
+- Complex numbers support for Adjoint Library (Adept) and standard library.
 
-- Complex number support for Adjoint Library (Adept).
-- All the dependencies are inside.
-- It recompile every time.
-- Use GoogleTest as an internal project.
-
-Build:
+## How to Build:
 
 - `mkdir build`
 - `cd build`
 - `cmake ..`
 - `make all`
 - `./runAllTests`
+
+## TODO:
+
+- Compatibility with std::complex class
