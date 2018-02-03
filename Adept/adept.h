@@ -603,8 +603,8 @@ namespace adept {
 
     // Return the number of independent and dependent variables that
     // have been identified
-    Offset n_independent() { return independent_offset_.size(); }
-    Offset n_dependent() { return dependent_offset_.size(); }
+    Offset n_independent() { return (adept::Offset) independent_offset_.size(); }
+    Offset n_dependent() { return (adept::Offset) dependent_offset_.size(); }
 
     // Compute the Jacobian matrix; note that jacobian_out must be
     // allocated to be of size m*n, where m is the number of dependent
@@ -809,8 +809,8 @@ namespace adept {
     Offset n_allocated_operations() const { return n_allocated_operations_; }
 
     // Return the size of the two dimensions of a Jacobian matrix
-    Offset n_independents() const { return independent_offset_.size(); }
-    Offset n_dependents() const { return dependent_offset_.size(); }
+    Offset n_independents() const { return (adept::Offset)independent_offset_.size(); }
+    Offset n_dependents() const { return (adept::Offset) dependent_offset_.size(); }
 
     // Return the maximum number of gradients required to perform
     // adjoint calculation

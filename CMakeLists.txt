@@ -1,20 +1,21 @@
 cmake_minimum_required(VERSION 3.3)
 project(AComplexClass)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
-
+set(ADJOINTLIB ADEPT)
+IF(WIN32)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  /EHsc -DUSE_${ADJOINTLIB}")
+ELSEIF(UNIX)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUSE_${ADJOINTLIB} -std=gnu++11")
+ENDIF()
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_CXX_STANDARD 11)
 add_subdirectory(gtests)
 
 find_package(Threads REQUIRED)
 enable_testing()
-include_directories(${GTEST_SOURCE_DIR} ${GMOCK_SOURCE_DIR})
+include_directories(${GTEST_SOURCE_DIR} ${GMOCK_SOURCE_DIR} Adept "xcomplex/include")
 
-file(GLOB SOURCES "xcomplex/Coder/*.cpp" "xcomplex/Include/*.h" "Adept/*.h" "Adept/*.cpp")
+file(GLOB SOURCES "xcomplex/src/*.cpp" "xcomplex/include/*.h")
 file(GLOB TEST_SOURCES "tests/*.cpp")
-add_executable(runAllTests tests.cpp tests/GoogleTestTest.cpp tests/GoogleMockTest.cpp tests/AComplexDerivativeTest.cpp tests/AComplexTest.cpp tests/DComplexTest.cpp ${TEST_SOURCES} ${SOURCES} tests/MixedTest.cpp)
+add_executable(runAllTests ${TEST_SOURCES} ${SOURCES})
 add_executable(AComplexClass main.cpp ${SOURCES})
-
-target_link_libraries(runAllTests gtest gtest_main)
-target_link_libraries(runAllTests gmock gmock_main)
-add_test(AllTests runAllTests)
+target_link_libraries(runAllTests LINK_PUBLIC gtest_main)

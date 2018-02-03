@@ -1,6 +1,5 @@
 #include <cassert>
-#include "../xcomplex/Include/acomplex.h"
-#include "../Adept/adept.h"
+#include "acomplex.h"
 #include "gtest/gtest.h"
 #include <complex>
 #define op operazione

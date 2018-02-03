@@ -13,4 +13,4 @@ Build:
 - `cd build`
 - `cmake ..`
 - `make all`
-- `./../bin/runAllTests`
+- `./runAllTests`
