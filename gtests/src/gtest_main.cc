@@ -37,7 +37,9 @@ GTEST_API_ int main(int argc, char **argv) {
   int p=RUN_ALL_TESTS();
    
 #ifdef _WIN32
+  #ifndef APPVEYOR_BUILD1
   system("pause");
+  #endif
 #endif
   return p;
 }
